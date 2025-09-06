@@ -1,0 +1,28 @@
+.main{
+  background-image: url("../../assets/Airbrush-Image-Enhancer.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  .buttons{
+    button{
+      width: 187px;
+      background-color: #ff1414;
+
+    }
+
+    button:hover{
+      transition: 0.3s;
+      background-color: #6e0a0a;
+    }
+  }
+  input{
+    background-image: url("../../assets/Search.png");
+    background-repeat: no-repeat;
+    background-position: 14px 14px;
+    width: 400px;
+  }
+  input::placeholder{
+    color: #E7E8E6;
+  }
+}
+
