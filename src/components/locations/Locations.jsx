@@ -57,7 +57,7 @@ const Locations = () => {
 
         <div className="relative">
             <div
-                className={`fixed inset-0 bg-center bg-cover bg-fixed transition-opacity duration-1000 z-0 ${bgLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`fixed inset-0 md:bg-center bg-cover bg-fixed transition-opacity duration-1000 z-0 ${bgLoaded ? 'opacity-100' : 'opacity-0'}`}
                 style={{backgroundImage: `url(${bg})`}}
             ></div>
 

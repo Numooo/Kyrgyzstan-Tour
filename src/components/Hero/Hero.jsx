@@ -6,7 +6,7 @@ const Hero = () => {
     return (
         <div className={'text-white px-5 md:px-0'}>
             <Header svgColor="#fff" />
-            <div className={"flex flex-col items-center gap-8 md:my-48 my-24"}>
+            <div className={"flex flex-col items-center gap-8 md:my-48 my-16"}>
                 <div className={'flex flex-col gap-5 items-center'}>
                     <h1 className={'tracking-wide text-center text-4xl md:text-5xl font-semibold'}>Author's tours throughout Kyrgyzstan</h1>
                     <p className={'md:w-2/5 text-center'}>Book tours and discover Kyrgyzstan from new sides!

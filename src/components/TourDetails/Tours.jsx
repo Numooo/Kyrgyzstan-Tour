@@ -113,7 +113,7 @@ const Locations = () => {
     return (
         <div className="relative">
             <div
-                className={`fixed inset-0 bg-center bg-cover bg-fixed transition-opacity duration-1000 z-0 ${
+                className={`fixed inset-0 md:bg-center bg-cover bg-fixed transition-opacity duration-1000 z-0 ${
                     bgLoaded ? 'opacity-100' : 'opacity-0'
                 }`}
                 style={{backgroundImage: `url(${bg})`}}
@@ -136,7 +136,7 @@ const Locations = () => {
                     <h2 className=" text-center text-2xl">If you want to take a cultural tour or visit other places. We are glad to have your tour according to your request.</h2>
                 </div>
 
-                <div className="md:container m-auto flex md:px-20 justify-between flex-wrap gap-4 py-10">
+                <div className="md:container px-3 m-auto flex md:px-20 justify-between flex-wrap gap-4 py-10">
                     {cards.map((card, index) => (
                         <Link
                             to="/TourDetails/"
@@ -146,7 +146,7 @@ const Locations = () => {
                         >
                             <div className="absolute inset-0 backdrop-blur-3xl rounded-3xl"></div>
 
-                            <div className="relative h-full z-10 px-4 flex flex-col md:flex-row justify-between gap-10">
+                            <div className="relative h-full z-10 px-4 flex flex-col md:flex-row justify-between md:gap-10">
                                 <div
                                     className="overflow-hidden rounded-xl w-full md:w-1/2 md:h-full h-72 bg-cover bg-center pt-5 duration-700 text-2xl uppercase font-bold text-green-600"
                                     style={{ backgroundImage: `url(${card.image})` }}

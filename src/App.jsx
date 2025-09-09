@@ -25,7 +25,7 @@ const App = () => {
     return (
         <Routes>
             <Route path="/" element={
-                <div className={'main relative'}>
+                <div className={'main relative bg-fixed bg-cover bg-center'}>
                     <div className={'absolute inset-0 bg-black/50'}></div>
                     <div className={'relative z-10'}>
                         <Hero/>

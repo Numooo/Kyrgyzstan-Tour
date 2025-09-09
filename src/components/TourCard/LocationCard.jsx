@@ -27,7 +27,7 @@ const LocationCard = () => {
                 <h3 className={'text-3xl text-white font-extrabold mt-10'}> Best Locations</h3>
                 <p className={'text-lg text-white pt-2'}>That will give you the best memories!</p>
             </div>
-            <div className={'md:container m-auto md:px-10 flex flex-wrap justify-center gap-5'}>
+            <div className={'md:container m-auto px-5 md:px-10 flex flex-wrap justify-center gap-5'}>
                 <Link state={{Card: "Burana"}}
                       className={'md:w-1/4 mb-5 w-full py-3 rounded-2xl relative border-2 border-transparent hover:border-white transition-all duration-300'}
                       to={"/LocationDetails"}>
