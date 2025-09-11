@@ -24,7 +24,7 @@ const Header = () => {
                             />
                         </svg>
                     ) : (
-                        <img className={'border border-gray-600 md:border-none md:shadow-none rounded-xl shadow-md w-9 h-9'} src="/logo.png" alt=""/>
+                        <img className={'border-2 bg-gray-300 border-gray-500 md:border-none md:shadow-none rounded-xl shadow-md w-9 h-9'} src="/logo.png" alt=""/>
                     )}
                 </button>
                 <a href="/" className={'md:text-4xl text-3xl font-bold'}>

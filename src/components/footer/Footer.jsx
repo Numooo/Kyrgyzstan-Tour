@@ -32,15 +32,20 @@ const Footer = forwardRef((props, ref) => {
                             <h2 className={"font-bold text-xl"}>
                                 Contacts
                             </h2>
-                            <p className={"pt-2 md:pt-6"}>
-                                Kyrgyzstan, <span>Bishkek</span>
-                            </p>
+                            <a target={"_blank"} href="https://maps.app.goo.gl/d7JEwHSJA8wpkYVr9">
+                                <p className={"pt-2 md:pt-6"}>
+                                    Kyrgyzstan, <span>Bishkek</span>
+                                </p>
+                            </a>
 
 
-                            <p>
-                                Phone: <span>+996 (700) 05 78 79</span>
-                            </p>
-                            <a href={'https://www.instagram.com/kyrgyzstan.tour?igsh=cnhvdGx5OHUzaWo1&utm_source=qr'}>
+                            <a target={"_blank"} href="https://wa.me/+996700057879">
+                                <p>
+                                    Phone: <span>+996 (700) 05 78 79</span>
+                                </p>
+                            </a>
+
+                            <a target={"_blank"} href={'https://www.instagram.com/kyrgyzstan.tour?igsh=cnhvdGx5OHUzaWo1&utm_source=qr'}>
                                 <p>
                                     Instagram: <span>kyrgyzstan.tour</span>
                                 </p>
@@ -52,13 +57,13 @@ const Footer = forwardRef((props, ref) => {
                             Our social cites
                         </h2>
                         <div className={'flex gap-2 pt-2 md:pt-6'}>
-                            <a href="">
+                            <a target={"_blank"} href="">
                                 <img className={'w-8 h-8'} src={Facebook} alt=""/>
                             </a>
-                            <a href="https://www.instagram.com/kyrgyzstan.tour?igsh=cnhvdGx5OHUzaWo1&utm_source=qr">
+                            <a target={"_blank"} href="https://www.instagram.com/kyrgyzstan.tour?igsh=cnhvdGx5OHUzaWo1&utm_source=qr">
                                 <img className={'w-8 h-8'} src={Linkedin} alt=""/>
                             </a>
-                            <a href="">
+                            <a target={"_blank"} href="https://wa.me/+996700057879">
                                 <img className={'w-8 h-8'} src={Whatsapp} alt=""/>
                             </a>
                         </div>
