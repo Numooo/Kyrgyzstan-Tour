@@ -4,8 +4,7 @@ import img3 from '../../assets/photo_2025-07-02_23-13-58.jpg'
 import img4 from '../../assets/bus.jpg'
 import Header from "../header/Header.jsx";
 import Footer from "../footer/Footer.jsx";
-import bg from "../../assets/bg_auto.jpg"
-import React from "react";
+import bg from "../../assets/bg_auto2.jpg"
 
 
 const AutoPark = () => {
@@ -50,10 +49,11 @@ const AutoPark = () => {
 
 
     return (
-        <div
-            className="relative bg-cover bg-center bg-fixed"
-            style={{backgroundImage: `url(${bg})`}}
-        >
+        <div className="relative overflow-hidden">
+            <div
+                className="fixed inset-0 -z-10 bg-cover bg-center"
+                style={{backgroundImage: `url(${bg})`}}
+            ></div>
             <div className="absolute inset-0 bg-black/50"></div>
             <div className="relative z-10">
                 <Header/>

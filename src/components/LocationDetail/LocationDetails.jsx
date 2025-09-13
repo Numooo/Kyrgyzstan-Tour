@@ -231,20 +231,20 @@ const LocationDetails = () => {
     };
 
     const Bishkek = {
-        region: "Chui Region",
-        title: "Bishkek and around of city",
-        text: "Discover the vibrant city of Bishkek and escape to nearby mountain getaways like Chunkurchak, Kashka-Suu, and Ala-Medin Gorge. Just a short drive from the capital, these scenic spots offer hiking, picnicking, and breathtaking views—perfect for a day trip into the heart of Kyrgyz nature",
-        description: "Discover Bishkek, Kyrgyzstan’s vibrant capital nestled at the foot of the Tian Shan mountains. Explore its wide boulevards, green parks, and bustling bazaars. Just outside the city, enjoy day trips to breathtaking spots like Ala-Archa National Park, the ski resort of Chunkurchak, the peaceful Kashka-Suu valley, and the scenic Ala-Medina gorge. It’s the perfect gateway to nature, adventure, and culture—all in one place.\"\n" +
-            "\n",
-        price: "$100",
-        duration: "half day",
-        groupSize: "from 1 to 10 persons",
-        difficulty: "Easy",
-        images: [bishmain, bishimg1, bishimg2, bishimg3, bishimg4, bishimg5, bishimg6, bishimg7],
-        date: "2024-09-17",
-        bg: bgbishkek,
-        mapUrl: "//www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93549.52240711205!2d74.52310609949508!3d42.88503033100999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec86a8bb5b873%3A0x222c5538e7365c36!2sBishkek%20City!5e0!3m2!1sen!2skg!4v1750440901792!5m2!1sen!2skg\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade"
-}
+            region: "Chui Region",
+            title: "Bishkek and around of city",
+            text: "Discover the vibrant city of Bishkek and escape to nearby mountain getaways like Chunkurchak, Kashka-Suu, and Ala-Medin Gorge. Just a short drive from the capital, these scenic spots offer hiking, picnicking, and breathtaking views—perfect for a day trip into the heart of Kyrgyz nature",
+            description: "Discover Bishkek, Kyrgyzstan’s vibrant capital nestled at the foot of the Tian Shan mountains. Explore its wide boulevards, green parks, and bustling bazaars. Just outside the city, enjoy day trips to breathtaking spots like Ala-Archa National Park, the ski resort of Chunkurchak, the peaceful Kashka-Suu valley, and the scenic Ala-Medina gorge. It’s the perfect gateway to nature, adventure, and culture—all in one place.\"\n" +
+                "\n",
+            price: "$100",
+            duration: "half day",
+            groupSize: "from 1 to 10 persons",
+            difficulty: "Easy",
+            images: [bishmain, bishimg1, bishimg2, bishimg3, bishimg4, bishimg5, bishimg6, bishimg7],
+            date: "2024-09-17",
+            bg: bgbishkek,
+            mapUrl: "//www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93549.52240711205!2d74.52310609949508!3d42.88503033100999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec86a8bb5b873%3A0x222c5538e7365c36!2sBishkek%20City!5e0!3m2!1sen!2skg!4v1750440901792!5m2!1sen!2skg\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade"
+        }
     ;
 
 
@@ -312,11 +312,16 @@ const LocationDetails = () => {
     };
 
     return (
-        <div className={'bg-cover bg-fixed bg-center relative'} style={{backgroundImage: `url(${tour.bg})`}}>
+        <div className="relative overflow-hidden">
+            <div
+                className="fixed inset-0 -z-10 bg-cover bg-center"
+                style={{backgroundImage: `url(${tour.bg})`}}
+            ></div>
             <div className={'absolute inset-0 bg-black/55'}></div>
             <div className="relative z-10 text-white">
                 <Header svgColor="#fff"/>
-                <motion.div className="border-t md:px-20 px-5 py-6" initial="hidden" animate="visible" variants={fadeIn}>
+                <motion.div className="border-t md:px-20 px-5 py-6" initial="hidden" animate="visible"
+                            variants={fadeIn}>
                     <motion.h2 className='text-3xl font-bold mb-5 text-red-600 uppercase' variants={fadeIn}>
                         {tour.region}
                     </motion.h2>
@@ -345,9 +350,9 @@ const LocationDetails = () => {
 
                                 <Link to="/Locations/">
                                     <motion.button
-                                        whileHover={{ scale: 1.05, boxShadow: "0px 4px 15px rgba(0, 255, 100, 0.5)" }}
-                                        whileTap={{ scale: 0.95 }}
-                                        transition={{ type: "spring", stiffness: 300 }}
+                                        whileHover={{scale: 1.05, boxShadow: "0px 4px 15px rgba(0, 255, 100, 0.5)"}}
+                                        whileTap={{scale: 0.95}}
+                                        transition={{type: "spring", stiffness: 300}}
                                         className="mt-6 w-full bg-green-600 text-white py-2 rounded-md font-semibold"
                                     >
                                         Book

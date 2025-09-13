@@ -112,71 +112,79 @@ const Locations = () => {
 
     return (
         <div className="relative">
-            <div
-                className={`fixed inset-0 md:bg-center bg-cover bg-fixed transition-opacity duration-1000 z-0 ${
-                    bgLoaded ? 'opacity-100' : 'opacity-0'
-                }`}
-                style={{backgroundImage: `url(${bg})`}}
-            ></div>
+            <div className="relative overflow-hidden">
+                <div
+                    className={`fixed inset-0 -z-10 bg-center bg-cover transition-opacity duration-1000 ${
+                        bgLoaded ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    style={{backgroundImage: `url(${bg})`}}
+                ></div>
 
-            <div className="absolute inset-0 bg-black/30 z-0"/>
+                <div className="absolute inset-0 bg-black/30 z-0"/>
 
-            {!bgLoaded && (
-                <div className="fixed inset-0 z-10 bg-black flex items-center justify-center">
+                {!bgLoaded && (
+                    <div className="fixed inset-0 z-10 bg-black flex items-center justify-center">
+                        <div
+                            className="w-10 h-10 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                )}
+
+                <div className="relative z-10">
+                    <Header/>
                     <div
-                        className="w-10 h-10 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
-                </div>
-            )}
-
-            <div className="relative z-10">
-                <Header/>
-                <div className="md:w-2/3 pt-24 pb-28 md:pt-44 md:pb-56 text-center gap-8 flex items-center m-auto justify-center flex-col md:container text-white  mt-8">
-                    <h1 className={'md:text-5xl text-4xl font-bold text-red-500'}>Multidays tours in Kyrgyzstan
+                        className="md:w-2/3 pt-24 pb-28 md:pt-44 md:pb-56 text-center gap-8 flex items-center m-auto justify-center flex-col md:container text-white  mt-8">
+                        <h1 className={'md:text-5xl text-4xl font-bold text-red-500'}>Multidays tours in Kyrgyzstan
                         </h1>
-                    <h2 className=" text-center text-2xl">If you want to take a cultural tour or visit other places. We are glad to have your tour according to your request.</h2>
-                </div>
+                        <h2 className=" text-center text-2xl">If you want to take a cultural tour or visit other places.
+                            We are glad to have your tour according to your request.</h2>
+                    </div>
 
-                <div className="md:container px-3 m-auto flex md:px-20 justify-between flex-wrap gap-4 py-10">
-                    {cards.map((card, index) => (
-                        <Link
-                            to="/TourDetails/"
-                            key={index}
-                            state={{ Card: card.locations[0] }}
-                            className="mb-20 w-full md:min-h-[432px] h-content pt-3 pb-3 rounded-2xl relative border-2 border-transparent hover:border-white transition-all duration-300"
-                        >
-                            <div className="absolute inset-0 backdrop-blur-3xl rounded-3xl"></div>
+                    <div className="md:container px-3 m-auto flex md:px-20 justify-between flex-wrap gap-4 py-10">
+                        {cards.map((card, index) => (
+                            <Link
+                                to="/TourDetails/"
+                                key={index}
+                                state={{Card: card.locations[0]}}
+                                className="mb-20 w-full md:min-h-[432px] h-content pt-3 pb-3 rounded-2xl relative border-2 border-transparent hover:border-white transition-all duration-300"
+                            >
+                                <div className="absolute inset-0 backdrop-blur-3xl rounded-3xl"></div>
 
-                            <div className="relative h-full z-10 px-4 flex flex-col md:flex-row justify-between md:gap-10">
                                 <div
-                                    className="overflow-hidden rounded-xl w-full md:w-1/2 md:h-full h-72 bg-cover bg-center pt-5 duration-700 text-2xl uppercase font-bold text-green-600"
-                                    style={{ backgroundImage: `url(${card.image})` }}
-                                ><span className={'p-2 rounded-r'} style={{background: `linear-gradient(to right, rgba(0, 47, 74, 0.8), rgba(0, 47, 74, 0.7))`}}>{card.days} days</span></div>
-
-                                <div className="md:w-1/2 w-full flex flex-col md:h-full">
-                                    <div className="flex flex-col md:flex-grow">
-                                        <h5 className="text-green-600 text-2xl font-semibold my-2">
-                                            {card.description} in {card.days} days
-                                        </h5>
-                                        <ul className="text-white text-sm space-y-1 list-none">
-                                            {card.locations.map((loc, i) => (
-                                                <li className="text-xl" key={i}>
-                                                    {loc}
-                                                </li>
-                                            ))}
-                                        </ul>
+                                    className="relative h-full z-10 px-4 flex flex-col md:flex-row justify-between md:gap-10">
+                                    <div
+                                        className="overflow-hidden rounded-xl w-full md:w-1/2 md:h-full h-72 bg-cover bg-center pt-5 duration-700 text-2xl uppercase font-bold text-green-600"
+                                        style={{backgroundImage: `url(${card.image})`}}
+                                    ><span className={'p-2 rounded-r'}
+                                           style={{background: `linear-gradient(to right, rgba(0, 47, 74, 0.8), rgba(0, 47, 74, 0.7))`}}>{card.days} days</span>
                                     </div>
 
-                                    <div className="mt-auto pt-6">
-                                        <button className="bg-green-600 rounded-2xl text-white px-5 py-2 border-2 border-green-600 transition-all duration-300 hover:border-white hover:bg-green-700 hover:scale-105">
-                                            More details ➜
-                                        </button>
+                                    <div className="md:w-1/2 w-full flex flex-col md:h-full">
+                                        <div className="flex flex-col md:flex-grow">
+                                            <h5 className="text-green-600 text-2xl font-semibold my-2">
+                                                {card.description} in {card.days} days
+                                            </h5>
+                                            <ul className="text-white text-sm space-y-1 list-none">
+                                                {card.locations.map((loc, i) => (
+                                                    <li className="text-xl" key={i}>
+                                                        {loc}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <div className="mt-auto pt-6">
+                                            <button
+                                                className="bg-green-600 rounded-2xl text-white px-5 py-2 border-2 border-green-600 transition-all duration-300 hover:border-white hover:bg-green-700 hover:scale-105">
+                                                More details ➜
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
+                            </Link>
+                        ))}
+                    </div>
 
+                </div>
             </div>
         </div>
     );

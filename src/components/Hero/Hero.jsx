@@ -15,12 +15,12 @@ const Hero = () => {
                 </div>
                 <div className="buttons flex flex-wrap justify-center gap-5">
                     <Link to="/locations/">
-                        <button className="min-w-[200px] py-3 px-6 text-white rounded-xl font-bold border-2 border-white bg-transparent hover:bg-white hover:text-gray-900 hover:shadow-lg transition-all duration-300 text-center">
+                        <button className="min-w-[200px] py-3 px-6 text-white rounded-xl font-bold border-2 border-white bg-red-700 hover:bg-red-900 hover:text-gray-900 hover:shadow-lg transition-all duration-300 text-center">
                             Create a trip
                         </button>
                     </Link>
                     <Link to="/Tour/">
-                        <button className="min-w-[200px] py-3 px-6 text-white rounded-xl font-bold border-2 border-white bg-transparent hover:bg-white hover:text-gray-900 hover:shadow-lg transition-all duration-300 text-center">
+                        <button className="min-w-[200px] py-3 px-6 text-white rounded-xl font-bold border-2 border-white bg-red-700 hover:bg-red-900 hover:text-gray-900 hover:shadow-lg transition-all duration-300 text-center">
                              Tours
                         </button>
                     </Link>

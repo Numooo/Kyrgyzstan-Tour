@@ -56,43 +56,44 @@ const Locations = () => {
     return (
 
         <div className="relative">
-            <div
-                className={`fixed inset-0 md:bg-center bg-cover bg-fixed transition-opacity duration-1000 z-0 ${bgLoaded ? 'opacity-100' : 'opacity-0'}`}
-                style={{backgroundImage: `url(${bg})`}}
-            ></div>
-
-            <div className="absolute inset-0 bg-black/30 z-0"/>
-
-            {!bgLoaded && (<div className="fixed inset-0 z-10 bg-black flex items-center justify-center">
+            <div className="relative overflow-hidden">
                 <div
-                    className="w-10 h-10 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
-            </div>)}
+                    className={`fixed inset-0 -z-10 md:bg-center bg-cover transition-opacity duration-1000 ${bgLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    style={{backgroundImage: `url(${bg})`}}
+                ></div>
 
-            <div className="relative z-10">
-                <Header/>
-                <div className={'flex flex-col m-auto md:container px-5 text-white text-3xl mt-8'}>
-                    <h1 className={"md:text-5xl text-3xl text-center font-bold md:pt-56 md:pb-80 pt-40 pb-60"}>
-                        Let’s create your personalized trip together!
-                    </h1>
-                    <h2 className="flex text-2xl font-bold text-gray-300 md:pl-40 md:mb-3">
-                        Start by choosing your favorite location cards:
-                    </h2>
-                </div>
+                <div className="absolute inset-0 bg-black/30 z-0"/>
 
-                <div className="md:container m-auto md:mt-0 px-5 flex justify-center flex-wrap md:gap-10">
-                    {cards.map((card, index) => (<div
-                        key={index}
-                        onClick={() => handleCardClick(index)}
-                        className={`md:w-1/4 mb-4 md:mb-0 w-full py-3 h-fit rounded-2xl relative border-2 transition-all duration-300 cursor-pointer ${activeIndexes.includes(index) ? 'backdrop-blur-2xl border-3 bg-white/30 border-white' : 'border-2 border-black'}`}>
-                        <div className="absolute inset-0 backdrop-blur-none bg-black/35 rounded-2xl"></div>
-                        <div className="relative h-content z-10 px-4 flex flex-col justify-between">
-                            <div>
-                                <div
-                                    className="rounded-xl h-[226px] w-full bg-cover bg-center"
-                                    style={{backgroundImage: `url(${card.image})`}}
-                                ></div>
-                                <h5 className="text-lg font-semibold mt-2 flex justify-between items-center">{card.title}
-                                    <span className="text-[#61e708] font-bold text-2xl">
+                {!bgLoaded && (<div className="fixed inset-0 z-10 bg-black flex items-center justify-center">
+                    <div
+                        className="w-10 h-10 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
+                </div>)}
+
+                <div className="relative z-10">
+                    <Header/>
+                    <div className={'flex flex-col m-auto md:container px-5 text-white text-3xl mt-8'}>
+                        <h1 className={"md:text-5xl text-3xl text-center font-bold md:pt-56 md:pb-80 pt-40 pb-60"}>
+                            Let’s create your personalized trip together!
+                        </h1>
+                        <h2 className="flex text-2xl font-bold text-gray-300 md:pl-40 md:mb-3">
+                            Start by choosing your favorite location cards:
+                        </h2>
+                    </div>
+
+                    <div className="md:container m-auto md:mt-0 px-5 flex justify-center flex-wrap md:gap-10">
+                        {cards.map((card, index) => (<div
+                            key={index}
+                            onClick={() => handleCardClick(index)}
+                            className={`md:w-1/4 mb-4 md:mb-0 w-full py-3 h-fit rounded-2xl relative border-2 transition-all duration-300 cursor-pointer ${activeIndexes.includes(index) ? 'backdrop-blur-2xl border-3 bg-white/30 border-white' : 'border-2 border-black'}`}>
+                            <div className="absolute inset-0 backdrop-blur-none bg-black/35 rounded-2xl"></div>
+                            <div className="relative h-content z-10 px-4 flex flex-col justify-between">
+                                <div>
+                                    <div
+                                        className="rounded-xl h-[226px] w-full bg-cover bg-center"
+                                        style={{backgroundImage: `url(${card.image})`}}
+                                    ></div>
+                                    <h5 className="text-lg font-semibold mt-2 flex justify-between items-center">{card.title}
+                                        <span className="text-[#61e708] font-bold text-2xl">
                                 {activeIndexes.includes(index) &&
                                     (<svg
                                         width="26"
@@ -106,22 +107,23 @@ const Locations = () => {
                                         />
                                     </svg>)}
                             </span>
-                                </h5>
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
-                    </div>))}
-                </div>
+                        </div>))}
+                    </div>
 
-                {activeCards.length > 0 && (<a
-                    href={generateWhatsAppLink()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all z-50"
-                >
-                    Send in WhatsApp
-                </a>)}
-                <div className={'mt-10'}>
-                    <Footer/>
+                    {activeCards.length > 0 && (<a
+                        href={generateWhatsAppLink()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all z-50"
+                    >
+                        Send in WhatsApp
+                    </a>)}
+                    <div className={'mt-10'}>
+                        <Footer/>
+                    </div>
                 </div>
             </div>
         </div>);

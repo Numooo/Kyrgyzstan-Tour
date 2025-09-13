@@ -813,10 +813,12 @@ const CardDetails = () => {
     ]
 
     return (
-        <div
-            className="relative bg-cover bg-center bg-fixed"
-            style={{backgroundImage: `url(${tour.banner})`}}
-        >
+        <div className="relative overflow-hidden">
+            <div
+                className="fixed inset-0 -z-10 bg-cover bg-center"
+                style={{backgroundImage: `url(${tour.banner})`}}
+            ></div>
+
             <div className={"h-screen"}>
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="relative z-10 flex flex-col h-2/3 justify-between md:h-1/2 text-white">
@@ -950,10 +952,12 @@ const CardDetails = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
-
-            <div className="bg-cover bg-bottom bg-fixed" style={{backgroundImage: `url(${tour.banner})`}}>
+            <div className="relative overflow-hidden">
+                <div
+                    className="fixed inset-0 -z-10 bg-cover bg-bottom"
+                    style={{backgroundImage: `url(${tour.banner})`}}
+                ></div>
                 <Footer/>
             </div>
         </div>
