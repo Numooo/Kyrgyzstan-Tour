@@ -15,6 +15,8 @@ import tour6 from '../../assets/first_back.jpg';
 import tour7 from '../../assets/sonkolimg2.webp';
 import tour8 from '../../assets/тогуз.jpg';
 import tour9 from '../../assets/ik7.jpg';
+import tour11 from '../../assets/tour11.jpg';
+import tour17 from '../../assets/онуч.jpeg';
 
 const Locations = () => {
     const [bgLoaded, setBgLoaded] = useState(false);
@@ -100,14 +102,27 @@ const Locations = () => {
             image: tour8,
             days: 8,
             description: 'Enjoy horseback riding, eagle shows, yurt stays, hot springs, and breathtaking landscapes.',
-            locations: ['Kirchyn Gorge', 'Chon-Kemin', 'Burana Tower', 'Chunkurchak Gorge', 'Issyk-Kul Lake', 'Zheti-Oguz Gorge', 'Altyn-Arashan Gorge', 'Ala Archa Gorge', 'Grigorievskoye Gorge', 'Rukh Ordo Cultural Center']
+            locations: ['Kirchyn Gorge', 'Chon-Kemin', 'Burana Tower', 'Chunkurchak Gorge', 'Issyk-Kul Lake', 'Zheti-Oguz Gorge', 'Altyn-Arashan Gorge', 'Ala Archa Gorge', 'Grigorievskoye Gorge',]
         },
         {
             image: tour9,
             days: 9,
             description: 'Adventure across Kyrgyzstan, gorges, Issyk-Kul Lake, yurt stays, eagle shows, hot springs.',
-            locations: ['Cholpon-Ata', 'Ala Archa Gorge', 'Chunkurchak Gorge', 'Burana Tower', 'Chon-Kemin Gorge', 'Issyk-Kul Lake', 'Zheti-Oguz Gorge', 'Fairy Tale Canyon', 'Karakol Gorge', 'Altyn-Arashan Gorge', 'Kashka-Suu Gorge']
+            locations: ['Cholpon-Ata', 'Ala Archa Gorge', 'Burana Tower', 'Chon-Kemin Gorge', 'Zheti-Oguz Gorge', 'Fairy Tale Canyon', 'Karakol Gorge', 'Altyn-Arashan Gorge']
         },
+        {
+            image: tour11,
+            days: 11,
+            description: 'Discover the Lakes Issyk-Kol, Song-Kol and Kel-Suu.',
+            locations: ["Son-Kol Lake", "Kel-Suu Lake", "Issyk-Kul Lake", "Jeti-Oguz", "Skazka Canyon", "Altyn-Arashan", "Chong-Kemin National Park", "Burana Tower"]
+        },
+        {
+            image: tour17,
+            days: 17,
+            description: "Grand tour across Kyrgyzstan: Issyk-Kul, Song-Kol, Tash-Rabat, Osh, Arslanbob, Sary-Chelek and more.",
+            locations: ["Osh", "Burana Tower", "Chong Kemin", "Altyn-Arashan", "Song-Kol Lake", "Arslanbob", "Sary-Chelek", "Suusamyr",]
+        }
+
     ];
 
     return (

@@ -129,6 +129,66 @@ import ninedays17 from '../../assets/kashkasuu.jpg';
 import ninedays18 from '../../assets/bgbishkek.jpg';
 import karta9days from '../../assets/karta9days.png';
 import WhatsAppButton from "./WhatsAppButton.jsx";
+import karta11days from '../../assets/karta11days.png';
+import bg11days from '../../assets/bg11days.webp';
+import day1a from '../../assets/bishmain1.jpg';
+import day1b from '../../assets/bgbishkek.jpg';
+import day2a from '../../assets/bgburana.jpg';
+import day2b from '../../assets/chonKemin.jpg';
+import day3a from '../../assets/ik6.jpg';
+import day3b from '../../assets/karakolday1.jpg';
+import day4a from '../../assets/karakolbg.webp';
+import day4b from '../../assets/AAmain.jpg';
+import day5a from '../../assets/ik8.jpg';
+import day5b from '../../assets/kokmoinok.jpg';
+import day6a from '../../assets/sonkolday3.jpg';
+import day6b from '../../assets/sonkolimg1.jpg';
+import day7a from '../../assets/kelsuu4.jpg';
+import day7b from '../../assets/kelsuu5.jpg';
+import day8a from '../../assets/kelsuubg.webp';
+import day8b from '../../assets/kelsuuday2.jpg';
+import day9a from '../../assets/sonkolbg.jpg';
+import day9b from '../../assets/sonkolimg6.webp';
+import day10a from '../../assets/sonkolimg7.webp';
+import day10b from '../../assets/sonkolmain.jpg';
+import day11a from '../../assets/kelsuuday5.jpg';
+import day11b from '../../assets/bishimg3.webp';
+import karta17days from '../../assets/karta17days.png';
+import bg17days from '../../assets/bg17days.jpg';
+import days1a from '../../assets/bishmain1.jpg';
+import days1b from '../../assets/bgbishkek.jpg';
+import days2a from '../../assets/bishimg5.jpg';
+import days2b from '../../assets/alarchaimg2.jpg';
+import days3a from '../../assets/bgburana.jpg';
+import days3b from '../../assets/chkmimg7.jpg';
+import days4a from '../../assets/issyk kul.jpg';
+import days4b from '../../assets/karakolday3.webp';
+import days5a from '../../assets/karakolbg.webp';
+import days5b from '../../assets/AAmain.jpg';
+import days6a from '../../assets/jetioguz.jpg';
+import days6b from '../../assets/skazka.jpg';
+import days7a from '../../assets/онбеш.jpg';
+import days7b from '../../assets/онэки.jpg';
+import days8a from '../../assets/bg_auto.jpg';
+import days8b from '../../assets/sonkolimg7.webp';
+import days9a from '../../assets/sonkolimg6.webp';
+import days9b from '../../assets/tash-rabat.jpg';
+import days10a from '../../assets/tash-rabat2.jpg';
+import days10b from '../../assets/sonkolday3.jpg';
+import days11a from '../../assets/osh.webp';
+import days11b from '../../assets/osh2.webp';
+import days12a from '../../assets/osh3.jpeg';
+import days12b from '../../assets/osh4.webp';
+import days13a from '../../assets/osh5.jpg';
+import days13b from '../../assets/arslanbob.webp';
+import days14a from '../../assets/arslanbob2.jpg';
+import days14b from '../../assets/sarychelekimg4.webp';
+import days15a from '../../assets/sarychelekimg1.jpg';
+import days15b from '../../assets/toktogul.webp';
+import days16a from '../../assets/kelsuuday5.jpg';
+import days16b from '../../assets/suusamyr.webp';
+import days17a from '../../assets/bishimg3.webp';
+import days17b from '../../assets/manas.jpg';
 
 const Park = {
     days: 1,
@@ -747,10 +807,230 @@ const nineDayTour = {
         }
     ]
 };
+const tour11 = {
+    days: 11,
+    get title() {
+        return `Kyrgyzstan Ultimate Journey. ${this.days} Days`;
+    },
+    description: "An 11-day adventure across Kyrgyzstan: from Bishkek to Issyk-Kul, Karakol, Son-Kul, Kel-Suu, and back. Includes lakes, canyons, national parks, hot springs, yurt stays, and unique cultural experiences.",
+    banner: `${bg11days}`,
+    season: "Spring / Summer / Autumn",
+    duration: "11 full days",
+    maps: `${karta11days}`,
+    itineraries: [
+        {
+            id: 1,
+            day: "Day 1",
+            image: [`${day1a}`, `${day1b}`],
+            title: "Arrival in Bishkek",
+            description: "Meeting at Manas International Airport, transfer to Bishkek, city tour: Ala-Too Square, Oak Park, Philharmonic Hall. Dinner and hotel accommodation."
+        },
+        {
+            id: 2,
+            day: "Day 2",
+            image: [`${day2a}`, `${day2b}`],
+            title: "Bishkek – Chon-Kemin",
+            description: "Breakfast, drive to Chon-Kemin Valley. On the way visit Burana Tower and explore Chong-Kemin National Park. Dinner and overnight in guesthouse."
+        },
+        {
+            id: 3,
+            day: "Day 3",
+            image: [`${day3a}`, `${day3b}`],
+            title: "Chon-Kemin – Karakol",
+            description: "Breakfast, departure through Issyk-Kul North Shore. Stops in Cholpon-Ata (Rukh Ordo Cultural Center, petroglyphs). Arrival in Karakol, dinner, and hotel stay."
+        },
+        {
+            id: 4,
+            day: "Day 4",
+            image: [`${day4a}`, `${day4b}`],
+            title: "Karakol – Altyn-Arashan",
+            description: "Breakfast, jeep ride or horse trek to Altyn-Arashan Gorge, hot springs bathing, picnic lunch. Return to Karakol, dinner, hotel accommodation."
+        },
+        {
+            id: 5,
+            day: "Day 5",
+            image: [`${day5a}`, `${day5b}`],
+            title: "Karakol – Bokonbaevo",
+            description: "Breakfast, trip along South Shore of Issyk-Kul. Stops at Jeti-Oguz (Seven Bulls Rock, Broken Heart), Skazka Canyon. Arrival in Bokonbaevo, eagle hunting demonstration, overnight in yurt camp."
+        },
+        {
+            id: 6,
+            day: "Day 6",
+            image: [`${day6a}`, `${day6b}`],
+            title: "Bokonbaevo – Naryn",
+            description: "Breakfast, visit Kyzyl Tuu village (yurt masters). Continue through mountain passes to Naryn. Dinner and hotel accommodation."
+        },
+        {
+            id: 7,
+            day: "Day 7",
+            image: [`${day7a}`, `${day7b}`],
+            title: "Naryn – Kel-Suu Lake",
+            description: "Early breakfast, jeep transfer to remote Kel-Suu Lake. Hiking, photography, picnic lunch. Overnight in yurts near Kel-Suu."
+        },
+        {
+            id: 8,
+            day: "Day 8",
+            image: [`${day8a}`, `${day8b}`],
+            title: "Kel-Suu – Naryn",
+            description: "Breakfast, morning walk around the lake. Return to Naryn town. Dinner and hotel accommodation."
+        },
+        {
+            id: 9,
+            day: "Day 9",
+            image: [`${day9a}`, `${day9b}`],
+            title: "Naryn – Son-Kul Lake",
+            description: "Breakfast, scenic drive to Son-Kul Lake (3,016m). Arrival, yurt accommodation. Experience nomadic lifestyle, horseback riding optional. Dinner and overnight in yurt."
+        },
+        {
+            id: 10,
+            day: "Day 10",
+            image: [`${day10a}`, `${day10b}`],
+            title: "Son-Kul – Bishkek",
+            description: "Breakfast, farewell with shepherd family. Drive back to Bishkek through mountain passes. Dinner and hotel stay."
+        },
+        {
+            id: 11,
+            day: "Day 11",
+            image: [`${day11a}`, `${day11b}`],
+            title: "Departure",
+            description: "Breakfast, free time. Transfer to Bishkek bus station or Manas International Airport."
+        }
+    ]
+};
+const tour17 = {
+    days: 17,
+    get title() {
+        return `Kyrgyzstan Grand Expedition. ${this.days} Days`;
+    },
+    description: "A 17-day adventure across Kyrgyzstan: from Bishkek to Issyk-Kul, Karakol, Song-Kul, Tash-Rabat, Osh, Arslanbob, Sary-Chelek and back. Includes lakes, gorges, national parks, hot springs, yurt stays, and cultural experiences.",
+    banner: `${bg17days}`,
+    season: "Spring / Summer / Autumn",
+    duration: "17 full days",
+    maps: `${karta17days}`,
+    itineraries: [
+        {
+            id: 1,
+            day: "Day 1",
+            image: [`${days1a}`, `${days1b}`],
+            title: "Arrival in Bishkek",
+            description: "Arrival at Manas Airport, transfer to Bishkek. Rest and short city tour. Overnight in hotel."
+        },
+        {
+            id: 2,
+            day: "Day 2",
+            image: [`${days2a}`, `${days2b}`],
+            title: "Bishkek – Ala Archa National Park",
+            description: "Day trip to Ala Archa National Park for light hikes. Return to Bishkek. Overnight in hotel."
+        },
+        {
+            id: 3,
+            day: "Day 3",
+            image: [`${days3a}`, `${days3b}`],
+            title: "Bishkek – Burana – Konorchek – Chon-Kemin",
+            description: "Visit Burana Tower and Konorchek Canyon. Arrival in Chon-Kemin for short hikes. Overnight in guesthouse."
+        },
+        {
+            id: 4,
+            day: "Day 4",
+            image: [`${days4a}`, `${days4b}`],
+            title: "Chon-Kemin – Issyk-Kul North Shore – Karakol",
+            description: "Drive along Issyk-Kul north shore. Stops at Cholpon-Ata (Rukh Ordo, petroglyphs), Semenov and Grigoriev gorges. Overnight in Karakol guesthouse."
+        },
+        {
+            id: 5,
+            day: "Day 5",
+            image: [`${days5a}`, `${days5b}`],
+            title: "Karakol – Altyn Arashan – Karakol",
+            description: "Jeep excursion to Altyn Arashan Valley. Walks, hot springs. Return to Karakol. Overnight in guesthouse."
+        },
+        {
+            id: 6,
+            day: "Day 6",
+            image: [`${days6a}`, `${days6b}`],
+            title: "Karakol – Jeti-Oguz – Barskoon – Skazka – Bokonbaevo",
+            description: "Drive along Issyk-Kul south shore. Stops at Jeti-Oguz rocks, Barskoon waterfalls, Skazka canyon. Overnight in yurt camp by the lake."
+        },
+        {
+            id: 7,
+            day: "Day 7",
+            image: [`${days7a}`, `${days7b}`],
+            title: "Bokonbaevo – Kochkor – Song-Kul",
+            description: "Visit eagle hunter, yurt master, handicraft center in Kochkor. Drive to Song-Kul Lake. Overnight in yurts."
+        },
+        {
+            id: 8,
+            day: "Day 8",
+            image: [`${days8a}`, `${days8b}`],
+            title: "Song-Kul Lake",
+            description: "Full day at Song-Kul: horseback riding, hiking, immersion into nomadic lifestyle. Overnight in yurts."
+        },
+        {
+            id: 9,
+            day: "Day 9",
+            image: [`${days9a}`, `${days9b}`],
+            title: "Song-Kul – Tash Rabat",
+            description: "Drive via scenic MELS pass to Tash Rabat caravanserai. Exploration, hiking. Overnight in yurts."
+        },
+        {
+            id: 10,
+            day: "Day 10",
+            image: [`${days10a}`, `${days10b}`],
+            title: "Tash Rabat – Kazarman",
+            description: "Morning in Tash Rabat, short hikes. Drive to Kazarman village. Overnight in guesthouse."
+        },
+        {
+            id: 11,
+            day: "Day 11",
+            image: [`${days11a}`, `${days11b}`],
+            title: "Kazarman – Osh",
+            description: "Drive to Osh, short city tour: local bazaar, Sulaiman Mountain. Overnight in guesthouse."
+        },
+        {
+            id: 12,
+            day: "Day 12",
+            image: [`${days12a}`, `${days12b}`],
+            title: "Osh City Tour",
+            description: "Full day in Osh: exploring historical sites, bazaar, dinner with national cuisine. Overnight in guesthouse."
+        },
+        {
+            id: 13,
+            day: "Day 13",
+            image: [`${days13a}`, `${days13b}`],
+            title: "Osh – Arslanbob",
+            description: "Visit animal market in Osh, drive to Arslanbob. Overnight in guesthouse."
+        },
+        {
+            id: 14,
+            day: "Day 14",
+            image: [`${days14a}`, `${days14b}`],
+            title: "Arslanbob – Sary-Chelek",
+            description: "Hikes in walnut forests of Arslanbob. Drive to Sary-Chelek Lake. Overnight in guesthouse."
+        },
+        {
+            id: 15,
+            day: "Day 15",
+            image: [`${days15a}`, `${days15b}`],
+            title: "Sary-Chelek – Toktogul – Suusamyr",
+            description: "Morning at Sary-Chelek, continue through Toktogul valley to Suusamyr. Overnight in guesthouse."
+        },
+        {
+            id: 16,
+            day: "Day 16",
+            image: [`${days16a}`, `${days16b}`],
+            title: "Suusamyr – Bishkek",
+            description: "Drive back to Bishkek via Chychkan gorge and Too Ashuu pass. Overnight in hotel."
+        },
+        {
+            id: 17,
+            day: "Day 17",
+            image: [`${days17a}`, `${days17b}`],
+            title: "Departure",
+            description: "Airport transfer for departure flight."
+        }
+    ]
+};
 
 const CardDetails = () => {
-    const [bgLoaded, setBgLoaded] = useState(false);
-    const [openIndex, setOpenIndex] = useState(null);
     const location = useLocation();
     const {Card} = location.state
     let tour
@@ -766,6 +1046,8 @@ const CardDetails = () => {
         tour = kelsuu;
     } else if (Card.includes('Son-Kul Lake')) {
         tour = sonkul;
+    } else if (Card.includes('Son-Kol Lake')) {
+        tour = tour11;
     } else if (Card.includes('Kashka Suu')) {
         tour = KashkaSuu;
     } else if (Card.includes('Chunkurchak')) {
@@ -782,6 +1064,8 @@ const CardDetails = () => {
         tour = eightDayTour;
     } else if (Card.includes('Cholpon')) {
         tour = nineDayTour;
+    } else if (Card.includes('Osh')) {
+        tour = tour17;
     }
 
     useEffect(() => {
@@ -789,12 +1073,13 @@ const CardDetails = () => {
 
         const img = new Image();
         img.src = bg;
-        img.onload = () => {
-            setBgLoaded(true);
-        };
     }, []);
+    const [openIndexes, setOpenIndexes] = useState([]);
+
     const toggleAccordion = (index) => {
-        setOpenIndex(openIndex === index ? null : index);
+        setOpenIndexes((prev) =>
+            prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+        );
     };
     const inclusions = [
         "Comfortable hotel accommodation (you will stay in different hotels along the route, depending on the location)",
@@ -806,14 +1091,13 @@ const CardDetails = () => {
     ]
 
     const exclusions = [
-        "Flights are not included",
         "Flight tickets",
         "Pocket expenses",
         "Insurance"
     ]
 
     return (
-        <div className="relative overflow-hidden">
+        <div className="relative">
             <div
                 className="fixed inset-0 -z-10 bg-cover bg-center"
                 style={{backgroundImage: `url(${tour.banner})`}}
@@ -828,34 +1112,43 @@ const CardDetails = () => {
             </div>
 
             <div className="relative z-20 flex flex-col md:flex-row p-4 sm:p-6">
-                <div
-                    className="w-full md:w-2/3 p-4 sm:p-6 rounded-lg shadow-md bg-white/45 backdrop-blur-md relative overflow-hidden">
+                <div className="w-full md:w-2/3 p-4 sm:p-6 rounded-lg shadow-md bg-white/45 backdrop-blur-md relative overflow-hidden">
                     <h3 className="text-lg sm:text-xl font-semibold text-gray-700">Itinerary</h3>
                     <div className="mt-4">
-                        {tour.itineraries.map((itinerary, index) => (
-                            <div key={itinerary.id} className="border-b border-gray-300">
-                                <button
-                                    className="flex items-center justify-between w-full py-3 sm:py-4 px-3 sm:px-4 text-left text-base sm:text-lg font-semibold"
-                                    onClick={() => toggleAccordion(index)}
-                                >
-                                    <span>Day {index + 1}. {itinerary.title}</span>
-                                    {openIndex === index ? "−" : "+"}
-                                </button>
-                                {openIndex === index && (
-                                    <div className="p-4 flex flex-wrap gap-2">
-                                        {itinerary.image.map((el, i) => (
-                                            <img
-                                                key={i}
-                                                src={el}
-                                                className="md:w-[calc(50%-0.5rem)] w-full  h-64 sm:h-64 object-cover rounded-lg mb-1"
-                                                alt={`Itinerary ${index + 1} Image ${i + 1}`}
-                                            />
-                                        ))}
-                                        <p className="text-gray-700">{itinerary.description}</p>
+                        {tour.itineraries.map((itinerary, index) => {
+                            const isOpen = openIndexes.includes(index);
+
+                            return (
+                                <div key={itinerary.id} className="border-b border-gray-300">
+                                    <button
+                                        className="flex items-center justify-between w-full py-3 sm:py-4 px-3 sm:px-4 text-left text-base sm:text-lg font-semibold"
+                                        onClick={() => toggleAccordion(index)}
+                                    >
+                                        <span>Day {index + 1}. {itinerary.title}</span>
+                                        {isOpen ? "−" : "+"}
+                                    </button>
+
+                                    <div
+                                        className={`transition-all duration-500 ease-in-out overflow-hidden`}
+                                        style={{
+                                            maxHeight: isOpen ? "1000px" : "0px",
+                                        }}
+                                    >
+                                        <div className="p-4 flex flex-wrap gap-2">
+                                            {itinerary.image.map((el, i) => (
+                                                <img
+                                                    key={i}
+                                                    src={el}
+                                                    className="md:w-[calc(50%-0.5rem)] w-full h-64 sm:h-64 object-cover rounded-lg mb-1"
+                                                    alt={`Itinerary ${index + 1} Image ${i + 1}`}
+                                                />
+                                            ))}
+                                            <p className="text-gray-700">{itinerary.description}</p>
+                                        </div>
                                     </div>
-                                )}
-                            </div>
-                        ))}
+                                </div>
+                            );
+                        })}
                     </div>
 
 
@@ -885,8 +1178,7 @@ const CardDetails = () => {
                     </div>
 
                     <div className="mt-4 md:flex md:flex-col items-start gap-5">
-                        <h3 className="text-lg sm:text-xl font-semibold text-gray-700 text-nowrap w-32">What's
-                            excluded</h3>
+                        <h3 className="text-lg sm:text-xl font-semibold text-gray-700 text-nowrap w-32">What's excluded</h3>
                         <div className="flex flex-col space-y-2 pt-1 px-3">
                             {exclusions.map((item, index) => (
                                 <div key={index}
@@ -908,10 +1200,7 @@ const CardDetails = () => {
                         <img className={''} src={tour.maps} alt=""/>
                     </div>
                 </div>
-
-                <div
-                    className="z-20 h-fit w-full md:w-1/3 p-4 sm:p-6 rounded-lg shadow-md mt-6 md:mt-0 md:ml-6 sticky top-6 bg-white/45 backdrop-blur-md relative overflow-hidden"
-                >
+                <div className="z-20 h-fit w-full md:w-1/3 p-4 sm:p-6 rounded-lg shadow-md mt-6 md:mt-0 md:ml-6 sticky top-6 bg-white/45 backdrop-blur-md overflow-hidden">
                     <div className="relative z-10">
                         <h2 className="text-xl sm:text-2xl font-semibold text-gray-700 border-b pb-2">{tour.title}</h2>
                         <p className="text-gray-600 mt-4">{tour.description}</p>
