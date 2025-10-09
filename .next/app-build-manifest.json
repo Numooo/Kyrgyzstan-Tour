@@ -15,14 +15,6 @@
       "static/css/a61f0b87e4af79ae.css",
       "static/chunks/app/layout-648a43a74db22cc6.js"
     ],
-    "/locations/page": [
-      "static/chunks/webpack-d76a4ab647debf7f.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-4efeec91c7871d79.js",
-      "static/chunks/main-app-9e596ec8aa148d3c.js",
-      "static/chunks/755-653564356d52e35b.js",
-      "static/chunks/app/locations/page-f1a77fe4ddefb524.js"
-    ],
     "/autopark/page": [
       "static/chunks/webpack-d76a4ab647debf7f.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
@@ -30,6 +22,25 @@
       "static/chunks/main-app-9e596ec8aa148d3c.js",
       "static/chunks/755-653564356d52e35b.js",
       "static/chunks/app/autopark/page-327d71636bb642fd.js"
+    ],
+    "/locations/[id]/page": [
+      "static/chunks/webpack-d76a4ab647debf7f.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-4efeec91c7871d79.js",
+      "static/chunks/main-app-9e596ec8aa148d3c.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/755-653564356d52e35b.js",
+      "static/chunks/613-6cdd1c827029ed08.js",
+      "static/chunks/575-346aa9beaa57c3d8.js",
+      "static/chunks/app/locations/[id]/page-d992c7a73b060dc8.js"
+    ],
+    "/locations/page": [
+      "static/chunks/webpack-d76a4ab647debf7f.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-4efeec91c7871d79.js",
+      "static/chunks/main-app-9e596ec8aa148d3c.js",
+      "static/chunks/755-653564356d52e35b.js",
+      "static/chunks/app/locations/page-f1a77fe4ddefb524.js"
     ],
     "/page": [
       "static/chunks/webpack-d76a4ab647debf7f.js",
@@ -50,17 +61,6 @@
       "static/chunks/755-653564356d52e35b.js",
       "static/chunks/619-ba102abea3e3d0e4.js",
       "static/chunks/app/tour/page-9bfe4292858b1f85.js"
-    ],
-    "/locations/[id]/page": [
-      "static/chunks/webpack-d76a4ab647debf7f.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-4efeec91c7871d79.js",
-      "static/chunks/main-app-9e596ec8aa148d3c.js",
-      "static/css/63c7182515913e2f.css",
-      "static/chunks/755-653564356d52e35b.js",
-      "static/chunks/613-6cdd1c827029ed08.js",
-      "static/chunks/575-346aa9beaa57c3d8.js",
-      "static/chunks/app/locations/[id]/page-d992c7a73b060dc8.js"
     ],
     "/tour/[id]/page": [
       "static/chunks/webpack-d76a4ab647debf7f.js",

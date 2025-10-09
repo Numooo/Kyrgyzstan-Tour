@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "start:all": "concurrently \"npm run start\" \"npx json-server ./db.json --port 8000\""
   },
   "dependencies": {

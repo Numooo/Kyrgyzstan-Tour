@@ -1,9 +1,9 @@
 {
   "/_not-found/page": "/_not-found",
-  "/locations/page": "/locations",
   "/autopark/page": "/autopark",
+  "/locations/[id]/page": "/locations/[id]",
+  "/locations/page": "/locations",
   "/page": "/",
   "/tour/page": "/tour",
-  "/locations/[id]/page": "/locations/[id]",
   "/tour/[id]/page": "/tour/[id]"
 }
