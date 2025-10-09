@@ -26,7 +26,7 @@ const CardDetails = () => {
         "All transfers included",
         "Professional guide support 24/7",
         "Horseback riding",
-        "Beautiful new locations to explore every day"
+        "Beautiful new location to explore every day"
     ]
 
     const exclusions = [

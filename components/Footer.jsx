@@ -74,7 +74,7 @@ const Footer = () => {
                             <a href={'/Tour/'}>
                                 Individual tours
                             </a>
-                            <a href={'/locations/'}>
+                            <a href={'/location/'}>
                                 Author's tours
                             </a>
                         </div>

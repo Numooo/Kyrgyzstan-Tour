@@ -20,12 +20,44 @@
   },
   "dynamicRoutes": [
     {
-      "page": "/locations/[id]",
-      "regex": "^/locations/([^/]+?)(?:/)?$",
+      "page": "/api/cars/[id]",
+      "regex": "^/api/cars/([^/]+?)(?:/)?$",
       "routeKeys": {
         "nxtPid": "nxtPid"
       },
-      "namedRegex": "^/locations/(?<nxtPid>[^/]+?)(?:/)?$"
+      "namedRegex": "^/api/cars/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/locations/[id]",
+      "regex": "^/api/locations/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/locations/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/socials/[id]",
+      "regex": "^/api/socials/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/socials/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/tours/[id]",
+      "regex": "^/api/tours/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/tours/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/location/[id]",
+      "regex": "^/location/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/location/(?<nxtPid>[^/]+?)(?:/)?$"
     },
     {
       "page": "/tour/[id]",
@@ -56,10 +88,10 @@
       "namedRegex": "^/autopark(?:/)?$"
     },
     {
-      "page": "/locations",
-      "regex": "^/locations(?:/)?$",
+      "page": "/location",
+      "regex": "^/location(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/locations(?:/)?$"
+      "namedRegex": "^/location(?:/)?$"
     },
     {
       "page": "/tour",

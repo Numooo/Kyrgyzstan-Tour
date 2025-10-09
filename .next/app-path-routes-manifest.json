@@ -1,9 +1,17 @@
 {
   "/_not-found/page": "/_not-found",
+  "/api/cars/[id]/route": "/api/cars/[id]",
+  "/api/locations/[id]/route": "/api/locations/[id]",
+  "/api/locations/route": "/api/locations",
+  "/api/socials/[id]/route": "/api/socials/[id]",
+  "/api/socials/route": "/api/socials",
+  "/api/tours/[id]/route": "/api/tours/[id]",
+  "/api/cars/route": "/api/cars",
+  "/api/tours/route": "/api/tours",
   "/autopark/page": "/autopark",
-  "/locations/[id]/page": "/locations/[id]",
-  "/locations/page": "/locations",
-  "/page": "/",
+  "/location/[id]/page": "/location/[id]",
+  "/location/page": "/location",
   "/tour/page": "/tour",
+  "/page": "/",
   "/tour/[id]/page": "/tour/[id]"
 }

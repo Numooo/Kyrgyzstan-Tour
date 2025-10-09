@@ -19,7 +19,7 @@ const LocationCard = () => {
                 {locations.map((location) => (
                     <Link key={location.id}
                         className={'md:w-1/4 mb-5 w-full py-3 rounded-2xl relative border-2 border-transparent hover:border-white transition-all duration-300'}
-                        href={`/locations/${location.id}`}>
+                        href={`/location/${location.id}`}>
                         <div className={" absolute inset-0 backdrop-blur-3xl rounded-3xl "}></div>
                         <div className={'relative h-full z-10 px-4 flex flex-col justify-between '}>
                             <div>

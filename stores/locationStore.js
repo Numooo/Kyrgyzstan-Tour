@@ -1,19 +1,18 @@
 import { create } from "zustand";
 import axios from "axios";
-import { api } from "./api";
 
 export const useLocationStore = create((set) => ({
     locations: [],
     location: null,
 
     getLocations: async () => {
-        const { data } = await axios.get(`${api}/locations`);
+        const { data } = await axios.get(`/api/locations`);
         set({ locations: data });
         return data;
     },
 
     getByIdLocation: async (id) => {
-        const { data } = await axios.get(`${api}/locations/${id}`);
+        const { data } = await axios.get(`/api/locations/${id}`);
         set({ location: data });
         return data;
     },
