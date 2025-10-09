@@ -1,4 +1,4 @@
-import { forwardRef } from "React"
+import React from "react";
 
 const Footer = () => {
     return (
