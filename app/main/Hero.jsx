@@ -13,7 +13,7 @@ const Hero = () => {
                         regions!</p>
                 </div>
                 <div className="buttons flex flex-wrap justify-center gap-5">
-                    <Link href="/locations">
+                    <Link href="/location">
                         <button className="min-w-[200px] cursor-pointer py-3 px-6 text-white rounded-xl font-bold border-2 border-white bg-red-700 hover:bg-red-900 hover:text-gray-900 hover:shadow-lg transition-all duration-300 text-center">
                             Create a trip
                         </button>

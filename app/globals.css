@@ -52,24 +52,13 @@ html, body {
 .arrow {
     display: none;
 }
-.slick-dots {
-    position: absolute;
-    bottom: -30px;
-    display: block !important;
-    width: 100%;
-    text-align: center;
-
-    li {
-        display: inline-block;
-        margin: 0 5px;
-
-        button:before {
-            font-size: 7px;
-            color: #ff1414 !important;
-            opacity: 0.75;
-        }
-    }
+/* Обычные точки */
+.swiper-pagination-bullet {
+    background-color: #ff1414 !important; /* Цвет неактивных */
+    opacity: 1;
 }
-.slick-dots li.slick-active button:before {
-    color: #6e0a0a ;
+
+/* Активная точка */
+.swiper-pagination-bullet-active {
+    background-color: #ff1414 !important; /* Цвет активной */
 }

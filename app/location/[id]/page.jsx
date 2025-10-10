@@ -2,13 +2,15 @@
 
 import {useEffect} from "react";
 import {motion} from "framer-motion";
-import Slider from "react-slick";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import {useGetByIdLocation, useLocation} from "@/stores/locationStore";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import {useParams} from "next/navigation";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const Page = () => {
     const {id} = useParams();
@@ -24,43 +26,7 @@ const Page = () => {
         hidden: {opacity: 0, y: 30},
         visible: {opacity: 1, y: 0, transition: {duration: 0.6}},
     };
-    const NextArrow = ({onClick}) => (
-        <div className="arrowse next" onClick={onClick}>
-            <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
-                <path d="M4.6 6L0 1.4L1.4 0L7.4 6L1.4 12L0 10.6L4.6 6Z" fill="#091700"/>
-            </svg>
-        </div>
-    );
 
-    const PrevArrow = ({onClick}) => (
-        <div className="arrowse prev" onClick={onClick}>
-            <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
-                <path d="M6 12L0 6L6 0L7.4 1.4L2.8 6L7.4 10.6L6 12Z" fill="#091700"/>
-            </svg>
-        </div>
-    );
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3.7,
-        centerMode: true,
-        nextArrow: <NextArrow/>,
-        prevArrow: <PrevArrow/>,
-        autoplay: true,
-        delay: 7000,
-        responsive: [
-            {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: false,
-                    arrows: true,
-                },
-            },
-        ],
-    };
     if (!location) {
         return (
             <div className="flex items-center justify-center h-screen text-white">
@@ -144,22 +110,40 @@ const Page = () => {
 
                 {location?.images?.length > 0 && (
                     <motion.div
-                        className="md:mb-40 mb-20 md:px-20"
+                        className="md:mb-40 px-5 mb-20 md:px-20 relative"
                         initial="hidden"
                         animate="visible"
                         variants={fadeIn}
                     >
-                        <Slider {...settings}>
+                        <Swiper
+                            modules={[Autoplay, Pagination]}
+                            slidesPerView={1}
+                            loop={true}
+                            autoplay={{
+                                delay: 7000,
+                                disableOnInteraction: false,
+                            }}
+                            breakpoints={{
+                                1024: {
+                                    centeredSlides: true,
+                                    slidesPerView: 3.7,
+                                    spaceBetween: 20,
+                                },
+                            }}
+                            pagination={{ clickable: true }}
+                            className="relative"
+                        >
                             {location.images.map((img, i) => (
-                                <motion.img
-                                    key={i}
-                                    className="w-full h-64 object-cover"
-                                    src={img}
-                                    alt={`slide-${i}`}
-                                    variants={fadeIn}
-                                />
+                                <SwiperSlide key={i}>
+                                    <motion.img
+                                        className="w-full mb-8 h-64 object-cover rounded-lg"
+                                        src={img}
+                                        alt={`slide-${i}`}
+                                        variants={fadeIn}
+                                    />
+                                </SwiperSlide>
                             ))}
-                        </Slider>
+                        </Swiper>
                     </motion.div>
                 )}
                 <Footer/>
