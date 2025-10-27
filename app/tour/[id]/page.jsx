@@ -22,7 +22,6 @@ const CardDetails = () => {
     };
     const inclusions = [
         "Comfortable hotel accommodation (you will stay in different hotels along the route, depending on the location)",
-        "3 meals a day (breakfast, lunch, dinner)",
         "All transfers included",
         "Professional guide support 24/7",
         "Horseback riding",
@@ -31,6 +30,7 @@ const CardDetails = () => {
 
     const exclusions = [
         "Flight tickets",
+        "3 meals a day (breakfast, lunch, dinner)",
         "Pocket expenses",
         "Insurance"
     ]
