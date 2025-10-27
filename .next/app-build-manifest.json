@@ -17,11 +17,60 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/locations/route.js"
     ],
-    "/location/[id]/page": [
+    "/autopark/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/location/[id]/page.css",
-      "static/chunks/app/location/[id]/page.js"
+      "static/chunks/app/autopark/page.js"
+    ],
+    "/api/cars/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/cars/route.js"
+    ],
+    "/admin/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/page.js"
+    ],
+    "/api/routes/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/routes/route.js"
+    ],
+    "/admin/[route]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/[route]/page.js"
+    ],
+    "/admin/[route]/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/[route]/[id]/page.js"
+    ],
+    "/api/cars/[id]/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/cars/[id]/route.js"
+    ],
+    "/api/upload/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/upload/route.js"
+    ],
+    "/api/socials/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/socials/route.js"
+    ],
+    "/api/socials/[id]/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/socials/[id]/route.js"
+    ],
+    "/admin/[route]/create/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/[route]/create/page.js"
     ],
     "/api/locations/[id]/route": [
       "static/chunks/webpack.js",
@@ -33,6 +82,12 @@
       "static/chunks/main-app.js",
       "static/chunks/app/location/page.js"
     ],
+    "/location/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/location/[id]/page.css",
+      "static/chunks/app/location/[id]/page.js"
+    ],
     "/tour/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -42,6 +97,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/tours/route.js"
+    ],
+    "/tour/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tour/[id]/page.js"
+    ],
+    "/api/tours/[id]/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/tours/[id]/route.js"
     ]
   }
 }

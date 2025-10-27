@@ -1,6 +1,12 @@
 {
+  "/api/locations/route": "app/api/locations/route.js",
   "/api/locations/[id]/route": "app/api/locations/[id]/route.js",
+  "/api/tours/route": "app/api/tours/route.js",
+  "/api/tours/[id]/route": "app/api/tours/[id]/route.js",
+  "/admin/[route]/[id]/page": "app/admin/[route]/[id]/page.js",
   "/page": "app/page.js",
+  "/location/page": "app/location/page.js",
   "/location/[id]/page": "app/location/[id]/page.js",
-  "/location/page": "app/location/page.js"
+  "/tour/page": "app/tour/page.js",
+  "/tour/[id]/page": "app/tour/[id]/page.js"
 }

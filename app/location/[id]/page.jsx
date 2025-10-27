@@ -3,7 +3,7 @@
 import {useEffect} from "react";
 import {motion} from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -72,7 +72,7 @@ const Page = () => {
                                     </li>
                                 </ul>
 
-                                <a href="/Locations/">
+                                <a href="/location/">
                                     <motion.button
                                         whileHover={{scale: 1.05, boxShadow: "0px 4px 15px rgba(0, 255, 100, 0.5)"}}
                                         whileTap={{scale: 0.95}}

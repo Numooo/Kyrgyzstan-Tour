@@ -1,5 +1,6 @@
 import { writeFile } from "fs/promises";
 import path from "path";
+import fs from "fs";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -12,12 +13,14 @@ export async function POST(req) {
 
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
+    const uploadDir = path.join(process.cwd(), "public/uploads");
+    if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
-    const uploadDir = path.join(process.cwd(), "uploads");
-    const filePath = path.join(uploadDir, file.name);
+    const fileName = `${Date.now()}_${file.name}`;
+    const filePath = path.join(uploadDir, fileName);
 
     await writeFile(filePath, buffer);
 
-    const publicPath = `/uploads/${file.name}`;
+    const publicPath = `/uploads/${fileName}`;
     return NextResponse.json({ path: publicPath });
 }

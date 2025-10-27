@@ -4,7 +4,7 @@ import CreatePage from "@/app/admin/[route]/create/CreatePage";
 
 const Page = () => {
     return (
-        <div className="h-screen">
+        <div className="h-screen overflow-hidden">
             <HeaderAdmin />
             <CreatePage/>
         </div>

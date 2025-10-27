@@ -5,6 +5,14 @@
 html, body {
     scroll-behavior: smooth;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+button{
+    cursor: pointer;
+}
 .slider-container {
     position: relative;
     overflow: hidden;
@@ -52,13 +60,11 @@ html, body {
 .arrow {
     display: none;
 }
-/* Обычные точки */
 .swiper-pagination-bullet {
     background-color: #ff1414 !important; /* Цвет неактивных */
     opacity: 1;
 }
 
-/* Активная точка */
 .swiper-pagination-bullet-active {
     background-color: #ff1414 !important; /* Цвет активной */
 }

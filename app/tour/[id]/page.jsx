@@ -25,12 +25,13 @@ const CardDetails = () => {
         "All transfers included",
         "Professional guide support 24/7",
         "Horseback riding",
+        "Breakfast",
         "Beautiful new location to explore every day"
     ]
 
     const exclusions = [
         "Flight tickets",
-        "3 meals a day (breakfast, lunch, dinner)",
+        "Lunch and Dinner",
         "Pocket expenses",
         "Insurance"
     ]
