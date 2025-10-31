@@ -79,7 +79,7 @@ export default function DetailPage() {
 
     return (
         <div className="flex container h-full min-h-screen bg-black text-white">
-            <aside className="w-1/5 bg-gray-900 border-r border-gray-700 overflow-y-auto">
+            <aside className="w-1/5 md:inline hidden bg-gray-900 border-r border-gray-700 overflow-y-auto">
                 <div className="p-3 text-gray-300 bg-sky-900 text-sm">APP</div>
                 <ul className="space-y-1 text-sm">
                     {routesList.map((item, index) => (
@@ -95,7 +95,7 @@ export default function DetailPage() {
             <main className="flex-1 flex flex-col p-6">
                 <h1 className="text-lg mb-4">Выберите {title} для изменения</h1>
 
-                <div className="flex gap-2 mb-4">
+                <div className="md:flex hidden gap-2 mb-4">
                     <input
                         type="text"
                         placeholder="Найти"
@@ -108,7 +108,7 @@ export default function DetailPage() {
                         Выполнить
                     </button>
                 </div>
-                <div className="max-h-[550px] overflow-y-auto">
+                <div className="md:max-h-[550px] max-h-[490px] overflow-y-auto">
                     <table className="w-full bg-gray-900 text-left border-collapse border border-gray-700">
                         <thead>
                         <tr className="bg-gray-800">
@@ -142,7 +142,7 @@ export default function DetailPage() {
                 </div>
             </main>
 
-            <aside className="w-1/5 bg-gray-900 border-l border-gray-700 p-4 text-sm">
+            <aside className="w-1/5 md:inline hidden bg-gray-900 border-l border-gray-700 p-4 text-sm">
                 <a href={`${pathname}/create`}>
                     <button className="mb-4 w-full bg-gray-800 hover:bg-gray-700 py-2 rounded">
                         Добавить {title}
@@ -150,14 +150,6 @@ export default function DetailPage() {
                 </a>
                 <div className="font-semibold mb-2">ФИЛЬТР</div>
                 <div className="space-y-2">
-                    <div>
-                        <p className="text-gray-400">ID</p>
-                        <ul>
-                            {data?.map((s) => (
-                                <li key={s.id}>{s.id}</li>
-                            ))}
-                        </ul>
-                    </div>
                     <div>
                         <p className="text-gray-400">Название</p>
                         <ul>

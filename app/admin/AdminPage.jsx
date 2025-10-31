@@ -13,7 +13,7 @@ export default function AdminPage() {
 
     return (
         <div className="flex flex-1 h-full container text-white">
-            <aside className="w-1/2 md:w-2/3 bg-black border-r border-gray-700">
+            <aside className="w-full md:w-2/3 bg-black border-r border-gray-700">
                 <div className="p-4">
                     <h2 className="bg-sky-900 px-4 py-2 font-semibold">APP</h2>
                     <ul className="bg-gray-900">
@@ -28,7 +28,7 @@ export default function AdminPage() {
                                     <a href={`/admin/${route}/create`} className="hover:underline">
                                         <AddSVG/> Добавить
                                     </a>
-                                    <a href="#" className="text-yellow-400 hover:underline">
+                                    <a href={`/admin/${route}`} className="text-yellow-400 hover:underline">
                                         ✎ Изменить
                                     </a>
                                 </span>
@@ -38,7 +38,7 @@ export default function AdminPage() {
                 </div>
             </aside>
 
-            <main className="flex-1 bg-black p-4">
+            <main className="hidden md:inline flex-1 bg-black p-4">
                 <div className="bg-gray-900 p-4">
                     <h2 className="text-lg font-semibold mb-4">Последние действия</h2>
                     <h3 className="text-sm text-gray-400 mb-2">Мои действия</h3>

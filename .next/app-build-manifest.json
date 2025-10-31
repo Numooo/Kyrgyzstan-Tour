@@ -17,16 +17,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/locations/route.js"
     ],
-    "/autopark/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/autopark/page.js"
-    ],
-    "/api/cars/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/cars/route.js"
-    ],
     "/admin/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -42,71 +32,31 @@
       "static/chunks/main-app.js",
       "static/chunks/app/admin/[route]/page.js"
     ],
+    "/api/tours/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/tours/route.js"
+    ],
     "/admin/[route]/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/admin/[route]/[id]/page.css",
       "static/chunks/app/admin/[route]/[id]/page.js"
     ],
-    "/api/cars/[id]/route": [
+    "/api/tours/[id]/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/cars/[id]/route.js"
-    ],
-    "/api/upload/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/upload/route.js"
-    ],
-    "/api/socials/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/socials/route.js"
-    ],
-    "/api/socials/[id]/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/socials/[id]/route.js"
+      "static/chunks/app/api/tours/[id]/route.js"
     ],
     "/admin/[route]/create/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/admin/[route]/create/page.js"
     ],
-    "/api/locations/[id]/route": [
+    "/api/cars/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/locations/[id]/route.js"
-    ],
-    "/location/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/location/page.js"
-    ],
-    "/location/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/location/[id]/page.css",
-      "static/chunks/app/location/[id]/page.js"
-    ],
-    "/tour/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tour/page.js"
-    ],
-    "/api/tours/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/tours/route.js"
-    ],
-    "/tour/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tour/[id]/page.js"
-    ],
-    "/api/tours/[id]/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/tours/[id]/route.js"
+      "static/chunks/app/api/cars/route.js"
     ]
   }
 }

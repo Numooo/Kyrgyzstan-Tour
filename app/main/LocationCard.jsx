@@ -25,7 +25,7 @@ const LocationCard = () => {
                             <div>
                                 <div
                                     className={'overflow-hidden rounded-xl h-[226px] bg-cover bg-center w-full duration-700'}
-                                    style={{backgroundImage: `url(${location.main_photo})`}} alt=""/>
+                                    style={{backgroundImage: `url(${location.image})`}} alt=""/>
 
                                 <h5 className={'text-lg font-semibold mt-2 text-[#ff1414]'}>{location.title}</h5>
                                 <p className={'text-lg text-white'}>{location.text.split(" ").slice(0, 18).join(" ")}</p>

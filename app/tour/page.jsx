@@ -44,7 +44,7 @@ const Locations = () => {
                                     className="relative h-full z-10 px-4 flex flex-col md:flex-row justify-between md:gap-10">
                                     <div
                                         className="overflow-hidden rounded-xl w-full md:w-1/2 md:h-full h-72 bg-cover bg-center pt-5 duration-700 text-2xl uppercase font-bold text-green-600"
-                                        style={{backgroundImage: `url(${card.banner})`}}
+                                        style={{backgroundImage: `url(${card.bg})`}}
                                     ><span className={'p-2 rounded-r'}
                                            style={{background: `linear-gradient(to right, rgba(0, 47, 74, 0.8), rgba(0, 47, 74, 0.7))`}}>{card.days} days</span>
                                     </div>

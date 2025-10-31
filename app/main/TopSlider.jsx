@@ -27,7 +27,7 @@ const TopSlider = () => {
                 loop={true}
                 pagination={{ clickable: true }}
                 autoplay={{
-                    delay: 7000,
+                    delay: 5000,
                     disableOnInteraction: false,
                 }}
                 breakpoints={{

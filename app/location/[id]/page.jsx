@@ -51,7 +51,7 @@ const Page = () => {
                     </motion.h2>
                     <div className="flex md:flex-row gap-5 flex-col justify-between">
                         <motion.div className='md:w-3/5 w-full' variants={fadeIn}>
-                            <motion.img src={location.images[0]} alt="location" className="rounded-lg w-full h-auto"
+                            <motion.img src={location.image} alt="location" className="rounded-lg w-full h-auto"
                                         variants={fadeIn}/>
                             <motion.h3 className="text-red-600 text-3xl font-bold mt-4"
                                        variants={fadeIn}>{location.title}</motion.h3>
@@ -120,7 +120,7 @@ const Page = () => {
                             slidesPerView={1}
                             loop={true}
                             autoplay={{
-                                delay: 7000,
+                                delay: 3000,
                                 disableOnInteraction: false,
                             }}
                             breakpoints={{

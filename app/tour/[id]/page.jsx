@@ -46,7 +46,7 @@ const CardDetails = () => {
         <div className="relative">
             <div
                 className="fixed inset-0 -z-10 bg-cover bg-center"
-                style={{backgroundImage: `url(${tour.banner})`}}
+                style={{backgroundImage: `url(${tour.bg})`}}
             ></div>
 
             <div className={"h-screen"}>
@@ -81,7 +81,7 @@ const CardDetails = () => {
                                         }}
                                     >
                                         <div className="p-4 flex flex-wrap gap-2">
-                                            {itinerary.image.map((el, i) => (
+                                            {itinerary.images.map((el, i) => (
                                                 <img
                                                     key={i}
                                                     src={el}
@@ -191,7 +191,7 @@ const CardDetails = () => {
             <div className="relative overflow-hidden">
                 <div
                     className="fixed inset-0 -z-10 bg-cover bg-bottom"
-                    style={{backgroundImage: `url(${tour.banner})`}}
+                    style={{backgroundImage: `url(${tour.bg})`}}
                 ></div>
                 <Footer/>
             </div>

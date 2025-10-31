@@ -62,7 +62,7 @@ const Locations = () => {
                                 <div>
                                     <div
                                         className="rounded-xl h-[226px] w-full bg-cover bg-center"
-                                        style={{ backgroundImage: `url(${card.main_photo})` }}
+                                        style={{ backgroundImage: `url(${card.image})` }}
                                     ></div>
                                     <h5 className="text-lg font-semibold mt-2 flex justify-between items-center text-[#ff1414]">
                                         {card.title}

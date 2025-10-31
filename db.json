@@ -57,7 +57,7 @@
   "locations": [
     {
       "id": "1",
-      "main_photo": "/assets/Burana.jpg",
+      "image": "/assets/Burana.jpg",
       "region": "Tokmok city",
       "title": "Burana Tower",
       "text": "Climb the ancient Burana Tower, explore the ruins of a lost city, and uncover the secrets of the Silk Road.",
@@ -82,7 +82,7 @@
     },
     {
       "id": "2",
-      "main_photo": "/assets/issykkul.jpg",
+      "image": "/assets/issykkul.jpg",
       "region": "Issyk Kul region",
       "title": "Issyk Kul lake",
       "text": "Swim in the crystal-clear waters of Issyk-Kul Lake, relax on its golden beaches, admire the surrounding majestic mountains, and discover the legends of the Pearl of the Silk Road.",
@@ -106,7 +106,7 @@
     },
     {
       "id": "3",
-      "main_photo": "/assets/Altyn-Arashan-gorge-24.jpg",
+      "image": "/assets/Altyn-Arashan-gorge-24.jpg",
       "region": "Issyk Kul region",
       "title": "Altyn Arashan gorge",
       "text": "Relax in natural hot springs surrounded by alpine meadows, hike through the breathtaking Altyn Arashan valley, meet nomadic shepherds, and enjoy the tranquility of this hidden mountain paradise.",
@@ -130,7 +130,7 @@
     },
     {
       "id": "4",
-      "main_photo": "/assets/kelsuu2.jpg",
+      "image": "/assets/kelsuu2.jpg",
       "region": "Naryn region",
       "title": "Kel Suu lake",
       "text": "Explore the hidden gem of Kel Suu Lake, nestled high in the Tian Shan mountains near the Chinese border. Embark on an off-road adventure through dramatic valleys, marvel at the emerald waters surrounded by towering cliffs, and experience the untouched beauty of one of Kyrgyzstan’s most remote and mysterious alpine lakes.",
@@ -154,7 +154,7 @@
     },
     {
       "id": "5",
-      "main_photo": "/assets/SonKol.jpg",
+      "image": "/assets/SonKol.jpg",
       "region": "Naryn region",
       "title": "Song Kul lake",
       "text": "Discover the serene beauty of Son-Kul Lake, a high-altitude alpine lake surrounded by rolling pastures and nomadic yurt camps. Experience traditional Kyrgyz culture, ride horses across vast meadows, and enjoy the peaceful wilderness far from the crowds.",
@@ -178,7 +178,7 @@
     },
     {
       "id": "6",
-      "main_photo": "/assets/alarcha.jpg",
+      "image": "/assets/alarcha.jpg",
       "region": "Chui region",
       "title": "Ala-Archa National park",
       "text": "Hike through the stunning gorges of Ala Archa National Park, breathe in the crisp mountain air, and marvel at snow-capped peaks just a short drive from Bishkek.",
@@ -202,7 +202,7 @@
     },
     {
       "id": "7",
-      "main_photo": "/assets/онуч.jpeg",
+      "image": "/assets/онуч.jpeg",
       "region": "Jalal-Abad region",
       "title": "Sary Chelek lake",
       "text": "Explore the pristine wilderness of Sary-Chelek Biosphere Reserve, hike through lush forests and deep gorges, and discover the serene beauty of the alpine lake surrounded by towering peaks.",
@@ -226,7 +226,7 @@
     },
     {
       "id": "8",
-      "main_photo": "/assets/chonKemin.jpg",
+      "image": "/assets/chonKemin.jpg",
       "region": "Chui Region",
       "title": "Chon Kemin valley",
       "text": "Explore the stunning Chon-Kemin Valley on horseback, ride through alpine meadows and rivers, and experience the peaceful beauty of Kyrgyz mountains.",
@@ -250,7 +250,7 @@
     },
     {
       "id": "9",
-      "main_photo": "/assets/bg2.jpg",
+      "image": "/assets/bg2.jpg",
       "region": "Chui Region",
       "title": "Bishkek and around of city",
       "text": "Discover the vibrant city of Bishkek and escape to nearby mountain getaways like Chunkurchak, Kashka-Suu, and Ala-Medin Gorge. Just a short drive from the capital, these scenic spots offer hiking, picnicking, and breathtaking views—perfect for a day trip into the heart of Kyrgyz nature",
@@ -270,7 +270,7 @@
         "/assets/bishimg7.webp"
       ],
       "bg": "/assets/bgbishkek.jpg",
-      "mapUrl": "//www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93549.52240711205!2d74.52310609949508!3d42.88503033100999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec86a8bb5b873%3A0x222c5538e7365c36!2sBishkek%20City!5e0!3m2!1sen!2skg!4v1750440901792!5m2!1sen!2skg\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade"
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93549.52240711205!2d74.52310609949508!3d42.88503033100999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec86a8bb5b873%3A0x222c5538e7365c36!2sBishkek%20City!5e0!3m2!1sen!2skg!4v1750440901792!5m2!1sen!2skg\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade"
     }
   ],
   "tours": [
@@ -279,7 +279,7 @@
       "days": 1,
       "title": "Tour around Bishkek city. 1 day",
       "description": "Discover the breathtaking beauty of Ala-Archa National Park with its alpine meadows, snow-capped peaks, and scenic hiking trails just outside of Bishkek",
-      "banner": "/assets/bishmain1.jpg",
+      "bg": "/assets/bishmain1.jpg",
       "season": "Summer / Winter / Spring / Autumn",
       "duration": "1 full day",
       "maps": "/assets/1daytour.png",
@@ -293,7 +293,7 @@
         {
           "id": "1",
           "title": "",
-          "image": [
+          "images": [
             "/assets/alarchamain.jpg"
           ],
           "description": "Start your day with an easy walk in Ala-Archa National Park, enjoying stunning views of the Kashka Suu Gorge. Explore the Panorama Trail and take a cable car ride up to the ski base, where breathtaking mountain vistas await. Then, head to the famous Sky Bridge in Chunkurchak — a suspension bridge over a picturesque gorge that offers unforgettable experiences and amazing photo opportunities. This route is perfect for those wanting to experience Kyrgyzstan’s natural beauty and enjoy an active yet relaxed day outdoors."
@@ -305,7 +305,7 @@
       "days": 1,
       "title": "Tour around Bishkek city. 1 day",
       "description": "Explore the natural charm of Kashka Suu and the legendary 'ZiL' Ski Base — where lush alpine meadows meet snow-covered peaks. Just a short drive from Bishkek, this destination offers year-round adventures with scenic trails, panoramic views, and thrilling cable car rides.",
-      "banner": "/assets/bgkashkasuu.jpg",
+      "bg": "/assets/bgkashkasuu.jpg",
       "season": "Summer / Winter / Spring / Autumn",
       "duration": "1 full day",
       "maps": "/assets/kartakashkasuu.jpg",
@@ -317,7 +317,7 @@
         {
           "id": "1",
           "title": "",
-          "image": [
+          "images": [
             "/assets/kashkasuu.jpg"
           ],
           "description": "Begin your day with a scenic walk through Kashka Suu National Park, taking in sweeping views of the gorge. Ride the cable car up to the 'ZiL' ski base for unforgettable mountain panoramas, then visit the iconic Sky Bridge in Chunkurchak — a thrilling suspension bridge with stunning photo spots. A perfect day trip for nature lovers and adventure seekers alike."
@@ -329,7 +329,7 @@
       "days": 2,
       "title": "Burana Adventure Tour in 2 days",
       "description": "Explore the ancient Burana Tower and its historical surroundings, hike through the breathtaking Ala-Archa National Park, ride horses across the scenic Chon Kemin Valley, and marvel at the dramatic landscapes of Kok Moinok Canyon",
-      "banner": "/assets/Burana.jpg",
+      "bg": "/assets/Burana.jpg",
       "season": "Summer, Winter",
       "duration": "2 days | 1 night",
       "maps": "/assets/days2tour.png",
@@ -344,7 +344,7 @@
         {
           "id": "1",
           "title": "Arrival in Bishkek & move to National Park 'Ala-Archa'",
-          "image": [
+          "images": [
             "/assets/ala-archa.jpg",
             "/assets/оналты.png"
           ],
@@ -353,7 +353,7 @@
         {
           "id": "2",
           "title": "Drive to Burana tower, stop in Chon Kemin valley, visit Kok Moinok canyon and return to Bishkek city",
-          "image": [
+          "images": [
             "/assets/img7.jpg",
             "/assets/chkmbg2.webp",
             "/assets/kokmoinok.jpg"
@@ -367,7 +367,7 @@
       "days": 2,
       "title": "Tour around Bishkek city. 2 days",
       "description": "Discover the breathtaking beauty of Ala-Archa National Park with its alpine meadows, snow-capped peaks, and scenic hiking trails just outside of Bishkek",
-      "banner": "/assets/bishmain1.jpg",
+      "bg": "/assets/bishmain1.jpg",
       "season": "Summer / Winter / Spring / Autumn",
       "duration": "2 full days",
       "maps": "/assets/kartachun.jpg",
@@ -380,7 +380,7 @@
         {
           "id": "1",
           "title": "Chunkurchak Sky Bridge",
-          "image": [
+          "images": [
             "/assets/chunkurchakday1.jpg"
           ],
           "description": "Visit the breathtaking Sky Bridge in Chunkurchak — a suspension bridge stretched across a scenic mountain gorge. Enjoy panoramic views, the thrill of walking above the valley, and perfect spots for unforgettable photos. A must-see stop for nature lovers and adventure seekers."
@@ -388,7 +388,7 @@
         {
           "id": "2",
           "title": "Panoramic Café with a View",
-          "image": [
+          "images": [
             "/assets/chunkurchakday2.jpg"
           ],
           "description": "Relax at a cozy panoramic café overlooking the majestic mountains. Enjoy a warm drink or local cuisine while soaking in stunning views of the surrounding valley. A perfect place to unwind and appreciate Kyrgyzstan’s natural beauty at a slower pace."
@@ -400,7 +400,7 @@
       "days": 3,
       "title": "Issyk-Kul with horse riding tour in 3 days",
       "description": "Embark on an unforgettable journey through the breathtaking landscapes and rich heritage of Kyrgyzstan. Begin at the crystal-clear Issyk-Kul Lake, the \"pearl of Central Asia,\" where majestic mountains meet turquoise waters. Explore the cultural charm of Cholpon-Ata, home to ancient petroglyphs and the open-air Ruh Ordo cultural complex.\n\nStep back in time at the historic Burana Tower, a remnant of the ancient Silk Road city of Balasagun, surrounded by mysterious stone balbals. Breathe in fresh alpine air at Ala-Archa National Park, a mountain paradise just a short drive from the capital.\n\nVenture into the serene beauty of Kashka-Suu and Chunkurchak gorges, where rolling green hills and dramatic cliffs invite you to reconnect with nature. Experience the unspoiled tranquility of Chon-Kemin Valley, a land of sweeping pastures, traditional villages, and awe-inspiring mountain views.\n\nThis adventure seamlessly blends history, culture, and nature — a perfect escape into the soul of Kyrgyzstan.",
-      "banner": "/assets/ikback2.jpg",
+      "bg": "/assets/ikback2.jpg",
       "season": "Summer/Winter",
       "duration": "3 days | 2 nights",
       "maps": "/assets/days3tour.png",
@@ -417,7 +417,7 @@
         {
           "id": "1",
           "title": "Meeting, departure to Kashka Suu gorge to the Cable Cars. Visit to Ala-Archa National Park, departure to the Sky Bridge.",
-          "image": [
+          "images": [
             "/assets/kashkasuu.jpg",
             "/assets/ik2.jpg",
             "/assets/alarchamain.jpg"
@@ -427,7 +427,7 @@
         {
           "id": "2",
           "title": "Drive to Tokmok city. Stop in Burana Tower. Departure to Chon Kemin valley. Horse Riding tour.",
-          "image": [
+          "images": [
             "/assets/img7.jpg",
             "/assets/chkmbg2.webp"
           ],
@@ -436,7 +436,7 @@
         {
           "id": "3",
           "title": "Drive to Issyk Kul Region. Departure to Cholpon Ata city. Spending time near of Issyk Kul lake. Visit 'Rukh Ordo' Culture center",
-          "image": [
+          "images": [
             "/assets/ik2.jpg",
             "/assets/ik6.jpg",
             "/assets/ik5.jpg"
@@ -450,7 +450,7 @@
       "days": 4,
       "title": "Kyrgyzstan Adventure Tour. 4 Days",
       "description": "Explore the natural wonders of Kyrgyzstan: Ala Archa, Chunkurchak, Chon Kemin, Issyk-Kul, Fairy Tale Canyon, Barskoon, Jeti-Oguz, and Altyn-Arashan. Experience horseback riding, eagle shows, thermal springs, and authentic Kyrgyz hospitality.",
-      "banner": "/assets/issykkul.jpg",
+      "bg": "/assets/issykkul.jpg",
       "season": "Summer / Spring / Autumn / Winter",
       "duration": "4 full days",
       "maps": "/assets/karta4day.png",
@@ -465,7 +465,7 @@
         {
           "id": "1",
           "day": "Day 1",
-          "image": [
+          "images": [
             "/assets/alarcha.jpg",
             "/assets/chunkurchakday1.jpg"
           ],
@@ -475,7 +475,7 @@
         {
           "id": "2",
           "day": "Day 2",
-          "image": [
+          "images": [
             "/assets/chkmbg.jpg",
             "/assets/chkmimg4.jpg"
           ],
@@ -485,7 +485,7 @@
         {
           "id": "3",
           "day": "Day 3",
-          "image": [
+          "images": [
             "/assets/беш.jpg",
             "/assets/ik8.jpg"
           ],
@@ -495,7 +495,7 @@
         {
           "id": "4",
           "day": "Day 4",
-          "image": [
+          "images": [
             "/assets/AAbg2.jpg"
           ],
           "title": "Altyn-Arashan & Farewell",
@@ -508,7 +508,7 @@
       "days": 5,
       "title": "Karakol Adventure Tour. 5 days",
       "description": "Embark on an unforgettable journey through Issyk-Kul’s stunning nature — from alpine lakes and snowy peaks to rich local culture and warm hospitality.",
-      "banner": "/assets/karakolbg.webp",
+      "bg": "/assets/karakolbg.webp",
       "season": "Summer",
       "duration": "5 days | 4 nights",
       "maps": "/assets/karta_karakol.jpg",
@@ -525,7 +525,7 @@
         {
           "id": "1",
           "title": "Karakol",
-          "image": [
+          "images": [
             "/assets/karakolday1.jpg"
           ],
           "description": "Discover Karakol’s charm with a city tour through Ala-Too Square, bustling bazaars, and rich cultural sights."
@@ -533,7 +533,7 @@
         {
           "id": "2",
           "title": "Altyn Arashan",
-          "image": [
+          "images": [
             "/assets/AAbg.webp"
           ],
           "description": "Unwind in Altyn Arashan’s stunning valley, soak in hot springs, and take in panoramic views of the mountains."
@@ -541,7 +541,7 @@
         {
           "id": "3",
           "title": "Ak-Suu",
-          "image": [
+          "images": [
             "/assets/karakolday3.webp"
           ],
           "description": "Wander through the surreal landscapes of Skazka Canyon and marvel at the cascading Barskoon waterfalls."
@@ -553,7 +553,7 @@
       "days": 5,
       "title": "Kel-Suu Adventure Tour. 5 days",
       "description": "Discover the hidden gem of Kel-Suu — a remote alpine lake surrounded by dramatic cliffs, wild landscapes, and unforgettable adventures.",
-      "banner": "/assets/kelsuubg.webp",
+      "bg": "/assets/kelsuubg.webp",
       "season": "Summer",
       "duration": "5 days | 4 nights",
       "maps": "/assets/karta_kelsuu.png",
@@ -566,7 +566,7 @@
         {
           "id": "1",
           "title": "Arrival in Bishkek & City Tour",
-          "image": [
+          "images": [
             "/assets/bishmain1.jpg"
           ],
           "description": "Welcome to Bishkek! Take a walk through Ala-Too Square, explore Osh Bazaar, and get a feel for Kyrgyz culture."
@@ -574,7 +574,7 @@
         {
           "id": "2",
           "title": "Drive to Naryn",
-          "image": [
+          "images": [
             "/assets/kelsuuday2.jpg"
           ],
           "description": "Travel through mountain passes to the town of Naryn — a peaceful gateway to southern Kyrgyzstan’s wilderness."
@@ -582,7 +582,7 @@
         {
           "id": "3",
           "title": "Journey to Ak-Sai Valley",
-          "image": [
+          "images": [
             "/assets/kelsuuday3.jpg"
           ],
           "description": "Discover the untouched beauty of the Ak-Sai Valley — vast alpine meadows, rugged terrain, and nomadic camps."
@@ -590,7 +590,7 @@
         {
           "id": "4",
           "title": "Kel-Suu Lake Expedition",
-          "image": [
+          "images": [
             "/assets/kelsuuMain.jpg"
           ],
           "description": "Venture deep into the mountains to see the breathtaking Kel-Suu Lake — a hidden turquoise gem among towering cliffs."
@@ -598,7 +598,7 @@
         {
           "id": "5",
           "title": "Return to Bishkek & Departure",
-          "image": [
+          "images": [
             "/assets/kelsuuday5.jpg"
           ],
           "description": "Head back to Bishkek through scenic landscapes, shop for souvenirs, and prepare for your departure."
@@ -610,7 +610,7 @@
       "days": 5,
       "title": "Son-Kul Nomad Tour. 5 days",
       "description": "Experience the serene beauty of Son-Kul — a high-altitude lake surrounded by endless pastures, yurts, and the spirit of nomadic life.",
-      "banner": "/assets/sonkolimg6.webp",
+      "bg": "/assets/sonkolimg6.webp",
       "season": "Summer",
       "duration": "5 days | 4 nights",
       "maps": "/assets/kartasonkol.jpg",
@@ -623,7 +623,7 @@
         {
           "id": "1",
           "title": "Arrival in Bishkek & City Tour",
-          "image": [
+          "images": [
             "/assets/bishmain1.jpg"
           ],
           "description": "Arrive in Bishkek and explore the city’s highlights including Ala-Too Square, the White House, and local bazaars."
@@ -631,7 +631,7 @@
         {
           "id": "2",
           "title": "Drive to Kyzart Village",
-          "image": [
+          "images": [
             "/assets/sonkolday3.jpg"
           ],
           "description": "Head south through scenic mountain roads to the quiet village of Kyzart — your gateway to Son-Kul."
@@ -639,7 +639,7 @@
         {
           "id": "3",
           "title": "Cross Kyzart Pass to Son-Kul Lake",
-          "image": [
+          "images": [
             "/assets/sonkolimg4.jpg"
           ],
           "description": "Trek or ride horseback over the Kyzart Pass and arrive at the stunning shores of Son-Kul Lake."
@@ -647,7 +647,7 @@
         {
           "id": "4",
           "title": "Yurt Stay & Nomadic Experience",
-          "image": [
+          "images": [
             "/assets/sonkolimg7.webp"
           ],
           "description": "Spend the day living like a nomad — ride horses, watch eagle hunters, and relax in a traditional yurt camp under the stars."
@@ -655,7 +655,7 @@
         {
           "id": "5",
           "title": "Return to Bishkek & Departure",
-          "image": [
+          "images": [
             "/assets/kelsuuday5.jpg"
           ],
           "description": "Say goodbye to the peaceful lake and return to Bishkek through mountain valleys. Final shopping before departure."
@@ -667,7 +667,7 @@
       "days": 5,
       "title": "Kyrgyzstan Discovery Tour. 5 Days",
       "description": "A 5-day journey through Kyrgyzstan’s most iconic destinations: Chunkurchak Gorge, Chon Kemin, Issyk-Kul Lake, Rukh Ordo Ethno Complex, Kok Moynok Canyon, Burana Tower, and Bishkek. Enjoy horseback riding, boat trips, cultural experiences, and authentic cuisine.",
-      "banner": "/assets/kelsuuday3.jpg",
+      "bg": "/assets/kelsuuday3.jpg",
       "season": "Summer / Spring / Autumn",
       "duration": "5 full days",
       "maps": "/assets/karta5day.png",
@@ -684,7 +684,7 @@
         {
           "id": "1",
           "day": "Day 1",
-          "image": [
+          "images": [
             "/assets/alarchaimg1.jpg",
             "/assets/chunkurchakday1.jpg"
           ],
@@ -694,7 +694,7 @@
         {
           "id": "2",
           "day": "Day 2",
-          "image": [
+          "images": [
             "/assets/chkmbg2.webp",
             "/assets/ik7.jpg"
           ],
@@ -704,7 +704,7 @@
         {
           "id": "3",
           "day": "Day 3",
-          "image": [
+          "images": [
             "/assets/ik5.jpg",
             "/assets/chkm1.jpg"
           ],
@@ -714,7 +714,7 @@
         {
           "id": "4",
           "day": "Day 4",
-          "image": [
+          "images": [
             "/assets/kokmoinok.jpg",
             "/assets/bgburana.jpg"
           ],
@@ -724,7 +724,7 @@
         {
           "id": "5",
           "day": "Day 5",
-          "image": [
+          "images": [
             "/assets/bgbishkek.jpg"
           ],
           "title": "Shopping & Farewell",
@@ -737,7 +737,7 @@
       "days": 6,
       "title": "Kyrgyzstan Grand Adventure. 6 Days",
       "description": "A 6-day journey through Kyrgyzstan’s majestic gorges, Issyk-Kul Lake, cultural sites, and mountain adventures. Experience hot springs, eagle shows, yurt stays, and traditional Kyrgyz cuisine.",
-      "banner": "/assets/sonkolimg2.webp",
+      "bg": "/assets/sonkolimg2.webp",
       "season": "Spring / Summer / Autumn",
       "duration": "6 full days",
       "maps": "/assets/karta6days.png",
@@ -756,7 +756,7 @@
         {
           "id": "1",
           "day": "Day 1",
-          "image": [
+          "images": [
             "/assets/chunkurchakday1.jpg",
             "/assets/img7.jpg",
             "/assets/chonKemin.jpg"
@@ -767,7 +767,7 @@
         {
           "id": "2",
           "day": "Day 2",
-          "image": [
+          "images": [
             "/assets/bg_auto.jpg",
             "/assets/онбеш.jpg"
           ],
@@ -777,7 +777,7 @@
         {
           "id": "3",
           "day": "Day 3",
-          "image": [
+          "images": [
             "/assets/jetioguz.jpg",
             "/assets/Airbrush-Image-Enhancer.jpeg"
           ],
@@ -787,7 +787,7 @@
         {
           "id": "4",
           "day": "Day 4",
-          "image": [
+          "images": [
             "/assets/AAbg4.jpg",
             "/assets/karakolbg.webp"
           ],
@@ -797,7 +797,7 @@
         {
           "id": "5",
           "day": "Day 5",
-          "image": [
+          "images": [
             "/assets/first_back.jpg",
             "/assets/ik2.jpg"
           ],
@@ -807,7 +807,7 @@
         {
           "id": "6",
           "day": "Day 6",
-          "image": [
+          "images": [
             "/assets/bishimg3.webp"
           ],
           "title": "Farewell Day",
@@ -820,7 +820,7 @@
       "days": 7,
       "title": "Kyrgyzstan Wonders. 7 Days",
       "description": "Experience the best of Kyrgyzstan in 7 days – mountain gorges, Issyk-Kul Lake, nomadic culture, eagle shows, hot springs, and vibrant city life. A perfect mix of nature, adventure, and tradition.",
-      "banner": "/assets/karakolbg.webp",
+      "bg": "/assets/karakolbg.webp",
       "season": "Spring / Summer / Autumn",
       "duration": "7 full days",
       "maps": "/assets/karta6days.png",
@@ -838,7 +838,7 @@
         {
           "id": "1",
           "day": "Day 1",
-          "image": [
+          "images": [
             "/assets/chunkurchakday1.jpg",
             "/assets/bgbishkek.jpg"
           ],
@@ -848,7 +848,7 @@
         {
           "id": "2",
           "day": "Day 2",
-          "image": [
+          "images": [
             "/assets/bgburana.jpg",
             "/assets/chkmimg7.jpg"
           ],
@@ -858,7 +858,7 @@
         {
           "id": "3",
           "day": "Day 3",
-          "image": [
+          "images": [
             "/assets/horserideAA.webp",
             "/assets/ik1.jpg"
           ],
@@ -868,7 +868,7 @@
         {
           "id": "4",
           "day": "Day 4",
-          "image": [
+          "images": [
             "/assets/jetioguz.jpg"
           ],
           "title": "Kyrgyz Culture & Mountain Beauty",
@@ -877,7 +877,7 @@
         {
           "id": "5",
           "day": "Day 5",
-          "image": [
+          "images": [
             "/assets/AAbg.webp",
             "/assets/karakolday3.webp"
           ],
@@ -887,7 +887,7 @@
         {
           "id": "6",
           "day": "Day 6",
-          "image": [
+          "images": [
             "/assets/first_back.jpg",
             "/assets/ik2.jpg"
           ],
@@ -897,7 +897,7 @@
         {
           "id": "7",
           "day": "Day 7",
-          "image": [
+          "images": [
             "/assets/bishimg3.webp"
           ],
           "title": "Farewell Kyrgyzstan",
@@ -910,7 +910,7 @@
       "days": 8,
       "title": "Kyrgyzstan Explorer Tour. 8 Days",
       "description": "An unforgettable 8-day journey through Kyrgyzstan's mountains, gorges, cultural heritage, and the serene Issyk-Kul Lake. Enjoy horseback riding, eagle shows, yurt stays, hot springs, and breathtaking landscapes.",
-      "banner": "/assets/fives.jpg",
+      "bg": "/assets/fives.jpg",
       "season": "Spring / Summer / Autumn",
       "duration": "8 full days",
       "maps": "/assets/karta8days.png",
@@ -929,7 +929,7 @@
         {
           "id": "1",
           "day": "Day 1",
-          "image": [
+          "images": [
             "/assets/bgbishkek.jpg",
             "/assets/alarcha.jpg"
           ],
@@ -939,7 +939,7 @@
         {
           "id": "2",
           "day": "Day 2",
-          "image": [
+          "images": [
             "/assets/chunkurchakday1.jpg",
             "/assets/img7.jpg",
             "/assets/chkmbg.jpg"
@@ -950,7 +950,7 @@
         {
           "id": "3",
           "day": "Day 3",
-          "image": [
+          "images": [
             "/assets/chkmimg4.jpg"
           ],
           "title": "Horseback Riding & Yurt Experience",
@@ -959,7 +959,7 @@
         {
           "id": "4",
           "day": "Day 4",
-          "image": [
+          "images": [
             "/assets/kelsuuday3.jpg",
             "/assets/ik8.jpg"
           ],
@@ -969,7 +969,7 @@
         {
           "id": "5",
           "day": "Day 5",
-          "image": [
+          "images": [
             "/assets/karakolday1.jpg"
           ],
           "title": "Karakol Exploration",
@@ -978,7 +978,7 @@
         {
           "id": "6",
           "day": "Day 6",
-          "image": [
+          "images": [
             "/assets/AAmain2.jpg",
             "/assets/chkmimg3.webp"
           ],
@@ -988,7 +988,7 @@
         {
           "id": "7",
           "day": "Day 7",
-          "image": [
+          "images": [
             "/assets/chonKemin.jpg",
             "/assets/ik2.jpg"
           ],
@@ -998,7 +998,7 @@
         {
           "id": "8",
           "day": "Day 8",
-          "image": [
+          "images": [
             "/assets/first_back.jpg"
           ],
           "title": "Culture & Farewell",
@@ -1011,7 +1011,7 @@
       "days": 9,
       "title": "Kyrgyzstan Ultimate Journey. 9 Days",
       "description": "A 9-day adventure across Kyrgyzstan, combining stunning gorges, Issyk-Kul Lake, yurt stays, eagle shows, hot springs, and authentic cultural experiences.",
-      "banner": "/assets/karakolbg.webp",
+      "bg": "/assets/karakolbg.webp",
       "season": "Spring / Summer / Autumn",
       "duration": "9 full days",
       "maps": "/assets/karta9days.png",
@@ -1029,7 +1029,7 @@
         {
           "id": "1",
           "day": "Day 1",
-          "image": [
+          "images": [
             "/assets/bishimg2.jpg",
             "/assets/alarchaimg2.jpg"
           ],
@@ -1039,7 +1039,7 @@
         {
           "id": "2",
           "day": "Day 2",
-          "image": [
+          "images": [
             "/assets/chunkurchakday1.jpg",
             "/assets/bgburana.jpg",
             "/assets/chkmbg.jpg"
@@ -1050,7 +1050,7 @@
         {
           "id": "3",
           "day": "Day 3",
-          "image": [
+          "images": [
             "/assets/chkmimg6.jpg",
             "/assets/chonKemin.jpg"
           ],
@@ -1060,7 +1060,7 @@
         {
           "id": "4",
           "day": "Day 4",
-          "image": [
+          "images": [
             "/assets/ik1.jpg",
             "/assets/issykkul.jpg"
           ],
@@ -1070,7 +1070,7 @@
         {
           "id": "5",
           "day": "Day 5",
-          "image": [
+          "images": [
             "/assets/kelsuuday3.jpg",
             "/assets/jetioguz.jpg"
           ],
@@ -1080,7 +1080,7 @@
         {
           "id": "6",
           "day": "Day 6",
-          "image": [
+          "images": [
             "/assets/karakolday3.webp"
           ],
           "title": "Karakol Exploration",
@@ -1089,7 +1089,7 @@
         {
           "id": "7",
           "day": "Day 7",
-          "image": [
+          "images": [
             "/assets/AAbg2.jpg",
             "/assets/chkmimg3.webp"
           ],
@@ -1099,8 +1099,8 @@
         {
           "id": "8",
           "day": "Day 8",
-          "image": [
-            "/assets/image.png",
+          "images": [
+            "/assets/images.png",
             "/assets/first_back.jpg"
           ],
           "title": "Gorges & Culture",
@@ -1109,7 +1109,7 @@
         {
           "id": "9",
           "day": "Day 9",
-          "image": [
+          "images": [
             "/assets/kashkasuu.jpg",
             "/assets/bgbishkek.jpg"
           ],
@@ -1123,7 +1123,7 @@
       "days": 11,
       "title": "Kyrgyzstan Ultimate Journey. 11 Days",
       "description": "An 11-day adventure across Kyrgyzstan: from Bishkek to Issyk-Kul, Karakol, Son-Kul, Kel-Suu, and back. Includes lakes, canyons, national parks, hot springs, yurt stays, and unique cultural experiences.",
-      "banner": "/assets/bg11days.webp",
+      "bg": "/assets/bg11days.webp",
       "season": "Spring / Summer / Autumn",
       "duration": "11 full days",
       "maps": "/assets/karta11days.png",
@@ -1141,7 +1141,7 @@
         {
           "id": "1",
           "day": "Day 1",
-          "image": [
+          "images": [
             "/assets/bishmain1.jpg",
             "/assets/bgbishkek.jpg"
           ],
@@ -1151,7 +1151,7 @@
         {
           "id": "2",
           "day": "Day 2",
-          "image": [
+          "images": [
             "/assets/bgburana.jpg",
             "/assets/chonKemin.jpg"
           ],
@@ -1161,7 +1161,7 @@
         {
           "id": "3",
           "day": "Day 3",
-          "image": [
+          "images": [
             "/assets/ik6.jpg",
             "/assets/karakolday1.jpg"
           ],
@@ -1171,7 +1171,7 @@
         {
           "id": "4",
           "day": "Day 4",
-          "image": [
+          "images": [
             "/assets/karakolbg.webp",
             "/assets/AAmain.jpg"
           ],
@@ -1181,7 +1181,7 @@
         {
           "id": "5",
           "day": "Day 5",
-          "image": [
+          "images": [
             "/assets/ik8.jpg",
             "/assets/kokmoinok.jpg"
           ],
@@ -1191,7 +1191,7 @@
         {
           "id": "6",
           "day": "Day 6",
-          "image": [
+          "images": [
             "/assets/sonkolday3.jpg",
             "/assets/sonkolimg1.jpg"
           ],
@@ -1201,7 +1201,7 @@
         {
           "id": "7",
           "day": "Day 7",
-          "image": [
+          "images": [
             "/assets/kelsuu4.jpg",
             "/assets/kelsuu5.jpg"
           ],
@@ -1211,7 +1211,7 @@
         {
           "id": "8",
           "day": "Day 8",
-          "image": [
+          "images": [
             "/assets/kelsuubg.webp",
             "/assets/kelsuuday2.jpg"
           ],
@@ -1221,7 +1221,7 @@
         {
           "id": "9",
           "day": "Day 9",
-          "image": [
+          "images": [
             "/assets/sonkolbg.jpg",
             "/assets/sonkolimg6.webp"
           ],
@@ -1231,7 +1231,7 @@
         {
           "id": "10",
           "day": "Day 10",
-          "image": [
+          "images": [
             "/assets/sonkolimg7.webp",
             "/assets/sonkolmain.jpg"
           ],
@@ -1241,7 +1241,7 @@
         {
           "id": "11",
           "day": "Day 11",
-          "image": [
+          "images": [
             "/assets/kelsuuday5.jpg",
             "/assets/bishimg3.webp"
           ],
@@ -1255,7 +1255,7 @@
       "days": 17,
       "title": "Kyrgyzstan Grand Expedition. 17 Days",
       "description": "A 17-day adventure across Kyrgyzstan: from Bishkek to Issyk-Kul, Karakol, Song-Kul, Tash-Rabat, Osh, Arslanbob, Sary-Chelek and back. Includes lakes, gorges, national parks, hot springs, yurt stays, and cultural experiences.",
-      "banner": "/assets/bg17days.jpg",
+      "bg": "/assets/bg17days.jpg",
       "season": "Spring / Summer / Autumn",
       "duration": "17 full days",
       "maps": "/assets/karta17days.png",
@@ -1274,7 +1274,7 @@
         {
           "id": "1",
           "day": "Day 1",
-          "image": [
+          "images": [
             "/assets/bishmain1.jpg",
             "/assets/bgbishkek.jpg"
           ],
@@ -1284,7 +1284,7 @@
         {
           "id": "2",
           "day": "Day 2",
-          "image": [
+          "images": [
             "/assets/bishimg5.jpg",
             "/assets/alarchaimg2.jpg"
           ],
@@ -1294,7 +1294,7 @@
         {
           "id": "3",
           "day": "Day 3",
-          "image": [
+          "images": [
             "/assets/bgburana.jpg",
             "/assets/chkmimg7.jpg"
           ],
@@ -1304,7 +1304,7 @@
         {
           "id": "4",
           "day": "Day 4",
-          "image": [
+          "images": [
             "/assets/issykkul.jpg",
             "/assets/karakolday3.webp"
           ],
@@ -1314,7 +1314,7 @@
         {
           "id": "5",
           "day": "Day 5",
-          "image": [
+          "images": [
             "/assets/karakolbg.webp",
             "/assets/AAmain.jpg"
           ],
@@ -1324,7 +1324,7 @@
         {
           "id": "6",
           "day": "Day 6",
-          "image": [
+          "images": [
             "/assets/jetioguz.jpg",
             "/assets/skazka.jpg"
           ],
@@ -1334,7 +1334,7 @@
         {
           "id": "7",
           "day": "Day 7",
-          "image": [
+          "images": [
             "/assets/онбеш.jpg",
             "/assets/онэки.jpg"
           ],
@@ -1344,7 +1344,7 @@
         {
           "id": "8",
           "day": "Day 8",
-          "image": [
+          "images": [
             "/assets/bg_auto.jpg",
             "/assets/sonkolimg7.webp"
           ],
@@ -1354,7 +1354,7 @@
         {
           "id": "9",
           "day": "Day 9",
-          "image": [
+          "images": [
             "/assets/sonkolimg6.webp",
             "/assets/tash-rabat.jpg"
           ],
@@ -1364,7 +1364,7 @@
         {
           "id": "10",
           "day": "Day 10",
-          "image": [
+          "images": [
             "/assets/tash-rabat2.jpg",
             "/assets/sonkolday3.jpg"
           ],
@@ -1374,7 +1374,7 @@
         {
           "id": "11",
           "day": "Day 11",
-          "image": [
+          "images": [
             "/assets/osh.webp",
             "/assets/osh2.webp"
           ],
@@ -1384,7 +1384,7 @@
         {
           "id": "12",
           "day": "Day 12",
-          "image": [
+          "images": [
             "/assets/osh3.jpeg",
             "/assets/osh4.webp"
           ],
@@ -1394,7 +1394,7 @@
         {
           "id": "13",
           "day": "Day 13",
-          "image": [
+          "images": [
             "/assets/osh5.jpg",
             "/assets/arslanbob.webp"
           ],
@@ -1404,7 +1404,7 @@
         {
           "id": "14",
           "day": "Day 14",
-          "image": [
+          "images": [
             "/assets/arslanbob2.jpg",
             "/assets/sarychelekimg4.webp"
           ],
@@ -1414,7 +1414,7 @@
         {
           "id": "15",
           "day": "Day 15",
-          "image": [
+          "images": [
             "/assets/sarychelekimg1.jpg",
             "/assets/toktogul.webp"
           ],
@@ -1424,7 +1424,7 @@
         {
           "id": "16",
           "day": "Day 16",
-          "image": [
+          "images": [
             "/assets/kelsuuday5.jpg",
             "/assets/suusamyr.webp"
           ],
@@ -1434,7 +1434,7 @@
         {
           "id": "17",
           "day": "Day 17",
-          "image": [
+          "images": [
             "/assets/bishimg3.webp",
             "/assets/manas.jpg"
           ],

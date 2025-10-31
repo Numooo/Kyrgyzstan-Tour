@@ -24,6 +24,7 @@ export const useRouteStore = create((set) => ({
             const { data } = await axios.post("/api/upload", formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
+
             set({ uploadedImage: data.path, uploading: false });
             return data.path;
         } catch (err) {
