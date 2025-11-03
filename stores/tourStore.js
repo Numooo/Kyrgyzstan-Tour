@@ -4,6 +4,7 @@ import axios from "axios";
 export const useTourStore = create((set) => ({
     tours: [],
     tour: null,
+    loadingTour: false,
 
     getTours: async () => {
         const { data } = await axios.get(`/api/tours`);
@@ -16,19 +17,38 @@ export const useTourStore = create((set) => ({
         set({ tour: data });
         return data;
     },
-    addTour: async (tour) => {
-        const { data } = await axios.post(`/api/tours/`, tour);
-        return data;
-    },
     deleteTour: async (id) => {
         await axios.delete(`/api/tours/${id}`);
     },
+    addTour: async (tour) => {
+        set({ loadingTour: true });
+
+        const { data } = await axios.post(`/api/tours/`, tour)
+            .finally(() => set({ loadingTour: false }));
+
+        set((state) => ({
+            tours: [...state.tours, data]
+        }));
+
+        return data;
+    },
     updateTour: async (id, updatedData) => {
-        const { data } = await axios.patch(`/api/tours/${id}`, updatedData);
+        set({ loadingTour: true });
+
+        const { data } = await axios.patch(`/api/tours/${id}`, updatedData)
+            .finally(() => set({ loadingTour: false }));
+
+        set((state) => ({
+            tours: state.tours.map((tour) =>
+                tour.id === id ? data : tour
+            )
+        }));
+
         return data;
     }
 }));
 
+export const useLoadingTour = () => useTourStore((state) => state.loadingTour);
 export const useGetTours = () => useTourStore((state) => state.getTours);
 export const useTours = () => useTourStore((state) => state.tours);
 export const useGetByIdTour = () => useTourStore((state) => state.getByIdTour);

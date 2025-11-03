@@ -1,9 +1,11 @@
 import { create } from "zustand";
 import axios from "axios";
+import {useTourStore} from "@/stores/tourStore";
 
 export const useSocialStore = create((set) => ({
     socials: [],
     social: null,
+    loadingSocial: false,
 
     getSocials: async () => {
         const { data } = await axios.get(`/api/socials`);
@@ -16,19 +18,39 @@ export const useSocialStore = create((set) => ({
         set({ social: data });
         return data;
     },
-    addSocial: async (social) => {
-        const { data } = await axios.post(`/api/socials/`, social);
-        return data;
-    },
     deleteSocial: async (id) => {
         await axios.delete(`/api/socials/${id}`);
     },
+    addSocial: async (social) => {
+        set({ loadingSocial: true });
+
+        const { data } = await axios.post(`/api/socials/`, social)
+            .finally(() => set({ loadingSocial: false }));
+
+        set((state) => ({
+            socials: [...state.socials, data]
+        }));
+
+        return data;
+    },
+
     updateSocial: async (id, updatedData) => {
-        const { data } = await axios.patch(`/api/socials/${id}`, updatedData);
+        set({ loadingSocial: true });
+
+        const { data } = await axios.patch(`/api/socials/${id}`, updatedData)
+            .finally(() => set({ loadingSocial: false }));
+
+        set((state) => ({
+            socials: state.socials.map((social) =>
+                social.id === id ? data : social
+            )
+        }));
+
         return data;
     }
 }));
 
+export const useLoadingSocial = () => useSocialStore((state) => state.loadingSocial);
 export const useGetSocials = () => useSocialStore((state) => state.getSocials);
 export const useSocials = () => useSocialStore((state) => state.socials);
 export const useGetByIdSocial = () => useSocialStore((state) => state.getByIdSocial);

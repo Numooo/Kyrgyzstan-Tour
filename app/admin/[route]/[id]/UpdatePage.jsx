@@ -3,12 +3,18 @@
 import React, {useEffect, useState} from "react";
 import AddSVG from "@/utils/AddSVG";
 import {useParams, usePathname} from "next/navigation";
-import {useGetRoutes, useRoutes, useUploadImage} from "@/stores/routeStore";
-import {useDeleteSocial, useGetByIdSocial, useSocial, useUpdateSocial} from "@/stores/socialStore";
-import {useCar, useDeleteCar, useGetByIdCar, useUpdateCar} from "@/stores/carStore";
+import {useGetRoutes, useRoutes, useUploadImage, useUploading} from "@/stores/routeStore";
+import {useDeleteSocial, useGetByIdSocial, useLoadingSocial, useSocial, useUpdateSocial} from "@/stores/socialStore";
+import {useCar, useDeleteCar, useGetByIdCar, useLoadingCar, useUpdateCar} from "@/stores/carStore";
 import {useRouter} from "next/navigation";
-import {useDeleteLocation, useGetByIdLocation, useLocation, useUpdateLocation} from "@/stores/locationStore";
-import {useDeleteTour, useGetByIdTour, useTour, useUpdateTour} from "@/stores/tourStore";
+import {
+    useDeleteLocation,
+    useGetByIdLocation,
+    useLoadingLocation,
+    useLocation,
+    useUpdateLocation
+} from "@/stores/locationStore";
+import {useDeleteTour, useGetByIdTour, useLoadingTour, useTour, useUpdateTour} from "@/stores/tourStore";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper/modules";
 import "swiper/css";
@@ -23,27 +29,37 @@ export default function UpdatePage() {
     const getByIdSocial = useGetByIdSocial();
     const deleteSocial = useDeleteSocial();
     const updateSocial = useUpdateSocial();
+    const loadingSocial = useLoadingSocial();
 
     const car = useCar();
     const getByIdCar = useGetByIdCar();
     const deleteCar = useDeleteCar();
     const updateCar = useUpdateCar();
+    const loadingCar = useLoadingCar();
 
     const location = useLocation();
     const getByIdLocation = useGetByIdLocation();
     const deleteLocation = useDeleteLocation();
     const updateLocation = useUpdateLocation();
+    const loadingLocation = useLoadingLocation()
 
     const tour = useTour();
     const getByIdTour = useGetByIdTour();
     const deleteTour = useDeleteTour();
     const updateTour = useUpdateTour();
+    const loadingTour = useLoadingTour();
 
     const params = useParams();
     const router = useRouter();
     const {id} = useParams();
     const pathname = usePathname();
-
+    const uploading = useUploading()
+    const isLoading =
+        loadingSocial ||
+        loadingCar ||
+        loadingLocation ||
+        loadingTour ||
+        uploading;
     const isSocialPage =
         params?.slug === "social" || pathname?.includes("/admin/social");
     const isTourPage =
@@ -96,6 +112,7 @@ export default function UpdatePage() {
     const [season, setSeason] = useState("");
     const [file, setFile] = useState(null);
     const [bg, setBg] = useState(null);
+    const [map, setMap] = useState(null);
     const [isEditingImage, setIsEditingImage] = useState(false);
     const [isEditingBg, setIsEditingBg] = useState(false);
     const [isEditingMap, setIsEditingMap] = useState(false);
@@ -175,6 +192,7 @@ export default function UpdatePage() {
         setLocations(updated);
     };
     const handleFileChange = (e) => setFile(e.target.files[0]);
+    const handleMapChange = (e) => setMap(e.target.files[0]);
     const handleFilesChange = (e, index) => {
         const file = e.target.files[0];
         if (!file) return;
@@ -228,7 +246,7 @@ export default function UpdatePage() {
             } else if (isLocationPage) {
                 await deleteLocation(id);
                 router.push("/admin/locations");
-            } else if (isLocationPage) {
+            } else if (isTourPage) {
                 await deleteTour(id);
                 router.push("/admin/tours");
             }
@@ -239,11 +257,16 @@ export default function UpdatePage() {
     const handleUpdate = async () => {
         let imagePath = data.image;
         let bgPath = data.bg;
+        let mapPath = data.maps
         let imagesPaths = [];
 
         if (file) {
             const uploadedPath = await uploadImage(file);
             if (uploadedPath) imagePath = uploadedPath;
+        }
+        if (map) {
+            const uploadedPath = await uploadImage(map);
+            if (uploadedPath) mapPath = uploadedPath;
         }
         if (bg) {
             const uploadedPath = await uploadImage(bg);
@@ -260,7 +283,17 @@ export default function UpdatePage() {
                 imagesPaths[i] = file;
             }
         }
-
+        const updatedTour = {
+            days,
+            title,
+            description,
+            bg: bgPath,
+            season,
+            duration,
+            maps: mapPath,
+            locations,
+            itineraries
+        };
         const updatedCar = {
             title,
             engine,
@@ -295,6 +328,9 @@ export default function UpdatePage() {
             } else if (isLocationPage) {
                 await updateLocation(id, updatedLocation);
                 router.push("/admin/locations");
+            } else if (isTourPage) {
+                await updateTour(id, updatedTour);
+                router.push("/admin/tours");
             }
         } catch (err) {
             console.error("❌ Error updating:", err);
@@ -530,7 +566,7 @@ export default function UpdatePage() {
                                     <div className="flex flex-col gap-2">
                                         <input
                                             type="file"
-                                            onChange={handleFileChange}
+                                            onChange={handleMapChange}
                                             className="w-64 bg-gray-800 border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
                                         />
                                         <div className="flex gap-2">
@@ -869,9 +905,40 @@ export default function UpdatePage() {
                 )}
 
                 <div className="flex flex-wrap gap-3 mt-6">
-                    <button onClick={handleUpdate}
-                            className="px-6 py-2 rounded-md bg-sky-800 hover:bg-sky-700 transition">
-                        СОХРАНИТЬ
+                    <button
+                        onClick={handleUpdate}
+                        disabled={isLoading}
+                        className={`px-6 py-2 rounded-md bg-sky-800 hover:bg-sky-700 transition flex items-center justify-center gap-2 ${
+                            isLoading ? "opacity-70 cursor-not-allowed" : ""
+                        }`}
+                    >
+                        {isLoading ? (
+                            <>
+                                <svg
+                                    className="animate-spin h-5 w-5 text-white"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <circle
+                                        className="opacity-25"
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                    ></circle>
+                                    <path
+                                        className="opacity-75"
+                                        fill="currentColor"
+                                        d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
+                                    ></path>
+                                </svg>
+                                <span>Загрузка...</span>
+                            </>
+                        ) : (
+                            "СОХРАНИТЬ"
+                        )}
                     </button>
                     <button onClick={handleDelete}
                             className="px-6 py-2 rounded-md bg-red-600 hover:bg-red-500 transition ml-auto">

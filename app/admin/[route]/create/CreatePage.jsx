@@ -3,11 +3,12 @@
 import React, {useEffect, useState} from "react";
 import AddSVG from "@/utils/AddSVG";
 import {useParams, usePathname, useRouter} from "next/navigation";
-import {useGetRoutes, useRoutes, useUploadError} from "@/stores/routeStore";
+import {useGetRoutes, useRoutes, useUploadError, useUploading} from "@/stores/routeStore";
 import {useUploadImage, useUploadedImage} from "@/stores/routeStore";
-import {useAddCar} from "@/stores/carStore";
-import {useAddSocial} from "@/stores/socialStore";
-import {useAddLocation} from "@/stores/locationStore";
+import {useAddCar, useLoadingCar} from "@/stores/carStore";
+import {useAddSocial, useLoadingSocial} from "@/stores/socialStore";
+import {useAddLocation, useLoadingLocation} from "@/stores/locationStore";
+import {useAddTour, useLoadingTour} from "@/stores/tourStore";
 
 export default function CreatePage() {
     const [title, setTitle] = useState("");
@@ -27,7 +28,12 @@ export default function CreatePage() {
     const [days, setDays] = useState("");
     const [season, setSeason] = useState("");
     const [locations, setLocations] = useState([""]);
-    const [itineraries, setItineraries] = useState([{ id: Date.now().toString(), title: "", description: "", images: [] }]);
+    const [itineraries, setItineraries] = useState([{
+        id: Date.now().toString(),
+        title: "",
+        description: "",
+        images: []
+    }]);
     const [map, setMap] = useState(null);
     const [bg, setBg] = useState(null);
     const [file, setFile] = useState(null);
@@ -41,7 +47,18 @@ export default function CreatePage() {
     const addCar = useAddCar();
     const addSocial = useAddSocial();
     const addLocation = useAddLocation();
-
+    const addTour = useAddTour();
+    const loadingTour = useLoadingTour();
+    const loadingCar = useLoadingCar()
+    const loadingLocation = useLoadingLocation()
+    const loadingSocial = useLoadingSocial()
+    const uploading = useUploading()
+    const isLoading =
+        loadingSocial ||
+        loadingCar ||
+        loadingLocation ||
+        loadingTour ||
+        uploading;
     const params = useParams();
     const pathname = usePathname();
     const router = useRouter();
@@ -69,10 +86,13 @@ export default function CreatePage() {
         void getRoutes();
     }, [getRoutes]);
     const handleItineraryChange = (index, field, value) => {
-        const updated = [...itineraries];
-        updated[index][field] = value;
-        setItineraries(updated);
+        setItineraries(prev => {
+            const updated = [...prev];
+            updated[index][field] = value;
+            return updated;
+        });
     };
+
     const handleAddItinerary = () => {
         const newItinerary = {
             id: Date.now().toString(),
@@ -80,26 +100,44 @@ export default function CreatePage() {
             description: "",
             images: []
         };
-        setItineraries([...itineraries, newItinerary]);
+        setItineraries(prev => [...prev, newItinerary]);
     };
+
     const handleDeleteItinerary = (index) => {
-        const updated = itineraries.filter((_, i) => i !== index);
-        setItineraries(updated.length ? updated : [""]);
+        setItineraries(prev => {
+            const updated = prev.filter((_, i) => i !== index);
+            return updated.length ? updated : [{
+                id: Date.now().toString(),
+                title: "",
+                description: "",
+                images: []
+            }];
+        });
     };
-    const handleAddImageI = (index, file) => {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            const updated = [...itineraries];
-            updated[index].images.push(reader.result);
-            setItineraries(updated);
-        };
-        reader.readAsDataURL(file);
+
+    const handleAddImageI = async (index, file) => {
+        if (!file) return;
+
+        const uploadedPath = await uploadImage(file);
+        if (!uploadedPath) return;
+
+        setItineraries(prev => {
+            const updated = [...prev];
+            const updatedItem = { ...updated[index] };
+            updatedItem.images = [...updatedItem.images, uploadedPath];
+            updated[index] = updatedItem;
+            return updated;
+        });
     };
+
     const handleDeleteImageI = (itineraryIndex, imageIndex) => {
-        const updated = [...itineraries];
-        updated[itineraryIndex].images = updated[itineraryIndex].images.filter((_, i) => i !== imageIndex);
-        setItineraries(updated);
+        setItineraries(prev => {
+            const updated = [...prev];
+            updated[itineraryIndex].images = updated[itineraryIndex].images.filter((_, i) => i !== imageIndex);
+            return updated;
+        });
     };
+
     const handleLocationChange = (index, value) => {
         const updated = [...locations];
         updated[index] = value;
@@ -125,6 +163,7 @@ export default function CreatePage() {
     const handleUpload = async () => {
         let mainPhotoPath = "/assets/photo_2025-07-02_23-13-58.jpg";
         let bgPath = "";
+        let mapPath = ""
         let imagesPaths = [];
 
         if (file) {
@@ -136,11 +175,30 @@ export default function CreatePage() {
             const uploadedPath = await uploadImage(bg);
             if (uploadedPath) bgPath = uploadedPath;
         }
+        if (map) {
+            const uploadedPath = await uploadImage(map);
+            if (uploadedPath) mapPath = uploadedPath;
+        }
         if (files && files.length > 0) {
             for (let i = 0; i < files.length; i++) {
                 const uploadedPath = await uploadImage(files[i]);
                 if (uploadedPath) imagesPaths.push(uploadedPath);
             }
+        }
+        if (isTourPage) {
+            await addTour({
+                id: Date.now(),
+                days,
+                title,
+                description,
+                bg: bgPath,
+                season,
+                duration,
+                maps: mapPath,
+                locations,
+                itineraries
+            });
+            router.push("/admin/tours");
         }
 
         if (isCarPage) {
@@ -200,7 +258,8 @@ export default function CreatePage() {
                     ))}
                 </ul>
             </aside>
-            <div className="mx-auto bg-black rounded-lg w-full md:w-4/5 p-6 overflow-y-auto max-h-[670px]">
+            <div
+                className="mx-auto bg-black rounded-lg w-full md:w-4/5 p-6 overflow-y-auto max-h-[555px] md:max-h-[670px]">
                 <div className={'flex justify-between items-start'}>
                     <h2 className="text-xl font-medium mb-4">
                         Добавить {name}
@@ -288,6 +347,53 @@ export default function CreatePage() {
                         )}
                     </div>
                 )}
+                {(isLocationPage || isTourPage) && (
+                    <>
+                        <div className="mb-4">
+                            <div className="flex gap-10 items-center">
+                                <label className="block mb-1 w-1/5 md:w-1/10 text-sm md:text-base">Описание:</label>
+                                <textarea
+                                    value={description}
+                                    placeholder={"The Burana Tower is a historic minaret located near the ancient city of Balasagun, once a thriving stop on the Silk Road. Built in the 11th century, it stands as one of the oldest architectural monuments in Central Asia. Visitors can climb to the top for panoramic views of the Chuy Valley. Surrounding the tower are ancient stone carvings known as balbals and remnants of old city walls. The site offers a fascinating glimpse into the region’s rich nomadic and Islamic heritage."}
+                                    onChange={(e) => setDescription(e.target.value)}
+                                    className="w-64 bg-gray-800 overflow-hidden border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
+                                />
+                            </div>
+                        </div>
+                        <div className="mb-4">
+                            <div className="flex gap-10 items-center">
+                                <label className="block mb-1 w-1/5 md:w-1/10 text-sm md:text-base">Задний фон:</label>
+                                <input
+                                    type="file"
+                                    onChange={handleBgChange}
+                                    className="w-64 bg-gray-800 border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
+                                />
+                            </div>
+                            {bg && (
+                                <div className="mt-2">
+                                    <p className="text-sm text-gray-300">Выбран файл: {bg.name}</p>
+                                </div>
+                            )}
+                            {uploadedImage && (
+                                <p className="mt-2 text-sm text-green-400">Файл загружен: {uploadedImage}</p>
+                            )}
+                            {uploadingError && (
+                                <p className="mt-2 text-sm text-red-500">{uploadingError}</p>
+                            )}
+                        </div>
+                        <div className="mb-4">
+                            <div className="flex gap-10 items-center">
+                                <label className="block mb-1 w-1/5 md:w-1/10 text-sm md:text-base">Длительность:</label>
+                                <input
+                                    value={duration}
+                                    placeholder={"half day"}
+                                    onChange={(e) => setDuration(e.target.value)}
+                                    className="w-64 bg-gray-800 border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
+                                />
+                            </div>
+                        </div>
+                    </>
+                )}
                 {isTourPage && (
                     <>
                         <div className="mb-4">
@@ -316,16 +422,20 @@ export default function CreatePage() {
                         <div className="mb-4">
                             <div className="flex gap-10 items-center">
                                 <label className="block mb-1 w-1/5 md:w-1/10 text-sm md:text-base">Маршрут:</label>
-                                <input
-                                    type="file"
-                                    onChange={handleMapChange}
-                                    className="w-64 bg-gray-800 border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
-                                />
-                                {show && <button
-                                    className="px-3 py-1 text-sm bg-blue-600 hover:bg-blue-700 rounded-md transition"
-                                    onClick={() => setShow(false)}>Подсказка</button>}
-                                {!show && <a onClick={() => setShow(true)} target={"_blank"} className={'text-blue-500 underline'}
-                                             href="https://www.google.com/maps/timeline?hl=en&authuser=0">Сделай на англ</a>}
+                                <div className={'flex md:flex-row flex-col md:items-center gap-5'}>
+                                    <input
+                                        type="file"
+                                        onChange={handleMapChange}
+                                        className="w-64 bg-gray-800 border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
+                                    />
+                                    {show && <button
+                                        className="px-3 py-1 text-sm bg-blue-600 hover:bg-blue-700 rounded-md transition"
+                                        onClick={() => setShow(false)}>Подсказка</button>}
+                                    {!show && <a onClick={() => setShow(true)} target={"_blank"}
+                                                 className={'text-blue-500 underline'}
+                                                 href="https://www.google.com/maps/timeline?hl=en&authuser=0">Сделай на
+                                        англ</a>}
+                                </div>
                             </div>
                             {map && (
                                 <div className="mt-2">
@@ -412,7 +522,12 @@ export default function CreatePage() {
                                                     type="file"
                                                     className="hidden"
                                                     accept="image/*"
-                                                    onChange={(e) => handleAddImageI(index, e.target.files[0])}
+                                                    onChange={async (e) => {
+                                                        const file = e.target.files[0];
+                                                        if (!file) return;
+                                                        await handleAddImageI(index, file);
+                                                        e.target.value = "";
+                                                    }}
                                                 />
                                             </label>
                                         </div>
@@ -431,27 +546,6 @@ export default function CreatePage() {
                 )}
                 {isLocationPage && (
                     <>
-                        <div className="mb-4">
-                            <div className="flex gap-10 items-center">
-                                <label className="block mb-1 w-1/5 md:w-1/10 text-sm md:text-base">Задний фон:</label>
-                                <input
-                                    type="file"
-                                    onChange={handleBgChange}
-                                    className="w-64 bg-gray-800 border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
-                                />
-                            </div>
-                            {bg && (
-                                <div className="mt-2">
-                                    <p className="text-sm text-gray-300">Выбран файл: {bg.name}</p>
-                                </div>
-                            )}
-                            {uploadedImage && (
-                                <p className="mt-2 text-sm text-green-400">Файл загружен: {uploadedImage}</p>
-                            )}
-                            {uploadingError && (
-                                <p className="mt-2 text-sm text-red-500">{uploadingError}</p>
-                            )}
-                        </div>
                         <div className="mb-4">
                             <div className="flex gap-10 items-center">
                                 <label className="block mb-1 w-1/5 md:w-1/10 text-sm md:text-base">Регион:</label>
@@ -476,17 +570,6 @@ export default function CreatePage() {
                         </div>
                         <div className="mb-4">
                             <div className="flex gap-10 items-center">
-                                <label className="block mb-1 w-1/5 md:w-1/10 text-sm md:text-base">Описание:</label>
-                                <textarea
-                                    value={description}
-                                    placeholder={"The Burana Tower is a historic minaret located near the ancient city of Balasagun, once a thriving stop on the Silk Road. Built in the 11th century, it stands as one of the oldest architectural monuments in Central Asia. Visitors can climb to the top for panoramic views of the Chuy Valley. Surrounding the tower are ancient stone carvings known as balbals and remnants of old city walls. The site offers a fascinating glimpse into the region’s rich nomadic and Islamic heritage."}
-                                    onChange={(e) => setDescription(e.target.value)}
-                                    className="w-64 bg-gray-800 overflow-hidden border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
-                                />
-                            </div>
-                        </div>
-                        <div className="mb-4">
-                            <div className="flex gap-10 items-center">
                                 <label className="block mb-1 w-1/5 md:w-1/10 text-sm md:text-base">Цена:</label>
                                 <input
                                     value={price}
@@ -503,17 +586,6 @@ export default function CreatePage() {
                                     value={difficulty}
                                     placeholder={"Easy"}
                                     onChange={(e) => setDifficulty(e.target.value)}
-                                    className="w-64 bg-gray-800 border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
-                                />
-                            </div>
-                        </div>
-                        <div className="mb-4">
-                            <div className="flex gap-10 items-center">
-                                <label className="block mb-1 w-1/5 md:w-1/10 text-sm md:text-base">Длительность:</label>
-                                <input
-                                    value={duration}
-                                    placeholder={"half day"}
-                                    onChange={(e) => setDuration(e.target.value)}
                                     className="w-64 bg-gray-800 border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
                                 />
                             </div>
@@ -595,9 +667,40 @@ export default function CreatePage() {
                 )
                 }
                 <div className="flex flex-wrap gap-3 mt-6">
-                    <button onClick={handleUpload}
-                            className="px-6 py-2 rounded-md bg-sky-800 hover:bg-sky-700 transition cursor-pointer">
-                        СОХРАНИТЬ
+                    <button
+                        onClick={handleUpload}
+                        disabled={isLoading}
+                        className={`px-6 py-2 rounded-md bg-sky-800 hover:bg-sky-700 transition flex items-center justify-center gap-2 ${
+                            isLoading ? "opacity-70 cursor-not-allowed" : ""
+                        }`}
+                    >
+                        {isLoading ? (
+                            <>
+                                <svg
+                                    className="animate-spin h-5 w-5 text-white"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <circle
+                                        className="opacity-25"
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                    ></circle>
+                                    <path
+                                        className="opacity-75"
+                                        fill="currentColor"
+                                        d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
+                                    ></path>
+                                </svg>
+                                <span>Загрузка...</span>
+                            </>
+                        ) : (
+                            "СОХРАНИТЬ"
+                        )}
                     </button>
                     <button onClick={() => router.back()}
                             className="px-6 py-2 rounded-md bg-gray-600 hover:bg-gray-500 transition ml-auto cursor-pointer">

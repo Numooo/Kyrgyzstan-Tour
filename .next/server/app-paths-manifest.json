@@ -1,8 +1,11 @@
 {
   "/api/routes/route": "app/api/routes/route.js",
-  "/page": "app/page.js",
+  "/api/cars/route": "app/api/cars/route.js",
+  "/api/cars/[id]/route": "app/api/cars/[id]/route.js",
+  "/api/upload/route": "app/api/upload/route.js",
   "/admin/page": "app/admin/page.js",
+  "/tour/page": "app/tour/page.js",
   "/admin/[route]/page": "app/admin/[route]/page.js",
-  "/admin/[route]/[id]/page": "app/admin/[route]/[id]/page.js",
-  "/admin/[route]/create/page": "app/admin/[route]/create/page.js"
+  "/admin/[route]/create/page": "app/admin/[route]/create/page.js",
+  "/admin/[route]/[id]/page": "app/admin/[route]/[id]/page.js"
 }

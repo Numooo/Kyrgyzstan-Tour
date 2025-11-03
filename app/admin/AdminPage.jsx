@@ -1,16 +1,53 @@
 "use client"
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import AddSVG from "@/utils/AddSVG";
 import DeleteSVG from "@/utils/DeleteSVG";
 import {useGetRoutes, useRoutes} from "@/stores/routeStore";
 
 export default function AdminPage() {
+    const [authorized, setAuthorized] = useState(false);
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
     const routesList = useRoutes();
     const getRoutes = useGetRoutes();
+
     useEffect(() => {
         void getRoutes();
     }, []);
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (password === "010304") {
+            setAuthorized(true);
+            setError("");
+        } else {
+            setError("Неверный пароль");
+        }
+    };
+    if (!authorized) {
+        return (
+            <div className="flex flex-col items-center pt-40 min-h-screen bg-gray-900 text-white">
+                <div className="bg-gray-800 p-8 rounded-2xl shadow-lg w-80 md:w-96 text-center">
+                    <h1 className="text-xl font-semibold mb-4">Добро пожаловать в админку</h1>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="password"
+                            placeholder="Введите пароль"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            className="w-full p-2 rounded-md border text-gray-500 mb-3"
+                        />
+                        <button
+                            type="submit"
+                            className="w-full bg-blue-600 hover:bg-blue-700 p-2 rounded-md"
+                        >
+                            Войти
+                        </button>
+                    </form>
+                    {error && <p className="text-red-400 mt-3">{error}</p>}
+                </div>
+            </div>
+        );
+    }
     return (
         <div className="flex flex-1 h-full container text-white">
             <aside className="w-full md:w-2/3 bg-black border-r border-gray-700">

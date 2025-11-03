@@ -75,12 +75,12 @@ const CardDetails = () => {
                                     </button>
 
                                     <div
-                                        className={`transition-all duration-500 ease-in-out overflow-hidden`}
+                                        className={`transition-all px-4 duration-500 ease-in-out overflow-hidden`}
                                         style={{
                                             maxHeight: isOpen ? "1000px" : "0px",
                                         }}
                                     >
-                                        <div className="p-4 flex flex-wrap gap-2">
+                                        <div className="flex flex-wrap gap-2">
                                             {itinerary.images.map((el, i) => (
                                                 <img
                                                     key={i}
@@ -89,8 +89,8 @@ const CardDetails = () => {
                                                     alt={`Itinerary ${index + 1} Image ${i + 1}`}
                                                 />
                                             ))}
-                                            <p className="text-gray-700">{itinerary.description}</p>
                                         </div>
+                                        <p className="text-gray-700 py-4">{itinerary.description}</p>
                                     </div>
                                 </div>
                             );
