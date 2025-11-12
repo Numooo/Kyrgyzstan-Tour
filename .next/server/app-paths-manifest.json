@@ -1,11 +1,9 @@
 {
   "/api/routes/route": "app/api/routes/route.js",
-  "/api/cars/route": "app/api/cars/route.js",
-  "/api/cars/[id]/route": "app/api/cars/[id]/route.js",
-  "/api/upload/route": "app/api/upload/route.js",
+  "/api/locations/route": "app/api/locations/route.js",
+  "/api/locations/[id]/route": "app/api/locations/[id]/route.js",
+  "/page": "app/page.js",
+  "/admin/[route]/[id]/page": "app/admin/[route]/[id]/page.js",
   "/admin/page": "app/admin/page.js",
-  "/tour/page": "app/tour/page.js",
-  "/admin/[route]/page": "app/admin/[route]/page.js",
-  "/admin/[route]/create/page": "app/admin/[route]/create/page.js",
-  "/admin/[route]/[id]/page": "app/admin/[route]/[id]/page.js"
+  "/location/[id]/page": "app/location/[id]/page.js"
 }

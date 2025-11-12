@@ -817,7 +817,7 @@ export default function UpdatePage() {
                                             spaceBetween: 10,
                                         },
                                     }}
-                                    navigation
+                                    navigation={{clickable: true}}
                                     className="relative container px-20"
                                 >
                                     {files.map((item, i) => {

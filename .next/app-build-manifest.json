@@ -17,27 +17,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/locations/route.js"
     ],
-    "/location/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/location/[id]/page.css",
-      "static/chunks/app/location/[id]/page.js"
-    ],
-    "/api/locations/[id]/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/locations/[id]/route.js"
-    ],
-    "/tour/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tour/page.js"
-    ],
-    "/api/tours/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/tours/route.js"
-    ],
     "/admin/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -48,36 +27,22 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/routes/route.js"
     ],
-    "/admin/[route]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/[route]/page.js"
-    ],
-    "/api/cars/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/cars/route.js"
-    ],
-    "/admin/[route]/create/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/[route]/create/page.js"
-    ],
-    "/api/upload/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/upload/route.js"
-    ],
     "/admin/[route]/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/admin/[route]/[id]/page.css",
       "static/chunks/app/admin/[route]/[id]/page.js"
     ],
-    "/api/cars/[id]/route": [
+    "/api/locations/[id]/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/cars/[id]/route.js"
+      "static/chunks/app/api/locations/[id]/route.js"
+    ],
+    "/location/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/location/[id]/page.css",
+      "static/chunks/app/location/[id]/page.js"
     ]
   }
 }
