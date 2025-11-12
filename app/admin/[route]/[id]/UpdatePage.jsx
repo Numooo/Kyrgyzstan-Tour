@@ -15,10 +15,6 @@ import {
     useUpdateLocation
 } from "@/stores/locationStore";
 import {useDeleteTour, useGetByIdTour, useLoadingTour, useTour, useUpdateTour} from "@/stores/tourStore";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation} from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 
 export default function UpdatePage() {
     const uploadImage = useUploadImage();
@@ -806,77 +802,62 @@ export default function UpdatePage() {
                         <div className="mb-4">
                             <div className="flex flex-col gap-4">
                                 <label className="block mb-1 w-full md:w-1/5 text-sm md:text-base">Фотки:</label>
-                                <Swiper
-                                    modules={[Navigation]}
-                                    slidesPerView={2}
-                                    loop={true}
-                                    breakpoints={{
-                                        1024: {
-                                            centeredSlides: false,
-                                            slidesPerView: 4,
-                                            spaceBetween: 10,
-                                        },
-                                    }}
-                                    navigation={{clickable: true}}
-                                    className="relative container px-20"
-                                >
+                                <div className="flex gap-4 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
                                     {files.map((item, i) => {
                                         const isEditing = editingIndex === i;
                                         const imageSrc = item instanceof File ? URL.createObjectURL(item) : item;
 
                                         return (
-                                            <SwiperSlide key={i}>
-                                                <div className="flex flex-col items-start gap-3">
-                                                    {!isEditing ? (
-                                                        <>
-                                                            <img
-                                                                src={imageSrc}
-                                                                alt={`image-${i}`}
-                                                                className="md:w-64 w-44 h-40 object-cover bg-gray-800 border border-gray-600 rounded-md"
-                                                            />
-                                                            <div className="flex gap-2">
-                                                                <button
-                                                                    onClick={() => setEditingIndex(i)}
-                                                                    className="md:px-3 px-1 py-1 text-sm bg-blue-600 hover:bg-blue-700 rounded-md transition"
-                                                                >
-                                                                    Изменить
-                                                                </button>
-                                                                <button
-                                                                    onClick={() => handleDeleteImage(i)}
-                                                                    className="md:px-3 px-1 py-1 text-sm bg-red-600 hover:bg-red-700 rounded-md transition"
-                                                                >
-                                                                    Удалить
-                                                                </button>
-                                                            </div>
-                                                        </>
-                                                    ) : (
-                                                        <div className="flex flex-col gap-2">
-                                                            <input
-                                                                type="file"
-                                                                onChange={(e) => handleFilesChange(e, i)}
-                                                                className="w-64 bg-gray-800 border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
-                                                            />
-                                                            <div className="flex gap-2">
-                                                                <button
-                                                                    onClick={() => handleSaveImage(i)}
-                                                                    className="px-3 py-1 text-sm bg-green-600 hover:bg-green-700 rounded-md transition"
-                                                                >
-                                                                    Сохранить
-                                                                </button>
-                                                                <button
-                                                                    onClick={() => setEditingIndex(null)}
-                                                                    className="px-3 py-1 text-sm bg-gray-700 hover:bg-gray-600 rounded-md transition"
-                                                                >
-                                                                    Отмена
-                                                                </button>
-                                                            </div>
+                                            <div key={i} className="flex flex-col items-start gap-3 shrink-0">
+                                                {!isEditing ? (
+                                                    <>
+                                                        <img
+                                                            src={imageSrc}
+                                                            alt={`image-${i}`}
+                                                            className="md:w-64 w-44 h-40 object-cover bg-gray-800 border border-gray-600 rounded-md"
+                                                        />
+                                                        <div className="flex gap-2">
+                                                            <button
+                                                                onClick={() => setEditingIndex(i)}
+                                                                className="md:px-3 px-1 py-1 text-sm bg-blue-600 hover:bg-blue-700 rounded-md transition"
+                                                            >
+                                                                Изменить
+                                                            </button>
+                                                            <button
+                                                                onClick={() => handleDeleteImage(i)}
+                                                                className="md:px-3 px-1 py-1 text-sm bg-red-600 hover:bg-red-700 rounded-md transition"
+                                                            >
+                                                                Удалить
+                                                            </button>
                                                         </div>
-                                                    )}
-                                                </div>
-                                            </SwiperSlide>
+                                                    </>
+                                                ) : (
+                                                    <div className="flex flex-col gap-2">
+                                                        <input
+                                                            type="file"
+                                                            onChange={(e) => handleFilesChange(e, i)}
+                                                            className="w-64 bg-gray-800 border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-400"
+                                                        />
+                                                        <div className="flex gap-2">
+                                                            <button
+                                                                onClick={() => handleSaveImage(i)}
+                                                                className="px-3 py-1 text-sm bg-green-600 hover:bg-green-700 rounded-md transition"
+                                                            >
+                                                                Сохранить
+                                                            </button>
+                                                            <button
+                                                                onClick={() => setEditingIndex(null)}
+                                                                className="px-3 py-1 text-sm bg-gray-700 hover:bg-gray-600 rounded-md transition"
+                                                            >
+                                                                Отмена
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
                                         );
                                     })}
-                                </Swiper>
+                                </div>
 
                                 <div className="flex flex-col mt-4 gap-2">
                                     <input
